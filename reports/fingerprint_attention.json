@@ -1,0 +1,28 @@
+{
+  "protocol": "attention_set_disjoint",
+  "k_enroll": 20,
+  "probe_w": 3,
+  "usable_ships": 22,
+  "n_probe_sets": 7194,
+  "eer_attention": 0.0765,
+  "eer_mean_ablation": 0.0714,
+  "free_exp_baseline": 0.1143,
+  "gate_eer": 0.08,
+  "across_date": {
+    "usable_ships": 3,
+    "eer_attention": 0.0904,
+    "note": "secondary; tiny N on VTUAD test"
+  },
+  "gate_pass": true,
+  "beats_free_exp": true,
+  "_config": {
+    "epochs": 60,
+    "K": 3,
+    "set_w": 5,
+    "margin": 0.2,
+    "scale": 16.0,
+    "lr": 0.0005,
+    "k_enroll": 20,
+    "probe_w": 3
+  }
+}

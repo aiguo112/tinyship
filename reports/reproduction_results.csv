@@ -1,0 +1,7 @@
+protocol,feature,aug,seed,subset_seed,test_acc,val_best,ts
+random,cqt_mfcc,True,1337,1337,0.9006,0.8881,2026-09-03 19:59
+session,cqt_mfcc,True,1337,1337,0.8913,0.8913,2026-09-04 00:08
+random,cqt_mfcc,True,2026,1337,0.8738,0.8931,2026-09-04 03:56
+random,cqt_mfcc,True,42,1337,0.9019,0.8969,2026-09-04 06:18
+session,cqt_mfcc,True,2026,1337,0.8553,0.9147,2026-09-04 08:44
+session,cqt_mfcc,True,42,1337,0.9153,0.9127,2026-09-04 11:21

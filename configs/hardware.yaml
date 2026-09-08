@@ -1,0 +1,21 @@
+# Hardware profile for TinyShip-Fingerprint bootstrap machine.
+# Update after environment verification if values change.
+
+gpu:
+  name: NVIDIA GeForce RTX 5070 Ti
+  vram_gb: 16
+  compute_capability: sm_120
+driver:
+  nvidia_smi_driver: "591.86"
+  cuda_reported: "13.1"
+pytorch:
+  required_cuda_wheel: cu128
+  notes: "Blackwell (sm_120) requires PyTorch builds with CUDA 12.8+"
+cpu:
+  model: Intel Core i7-10700
+  cores: 8
+  threads: 16
+ram_gb: 64
+disk:
+  project_drive: D
+  notes: "Large datasets may use H: (~1.6 TB free) if D: fills"

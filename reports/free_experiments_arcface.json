@@ -1,0 +1,138 @@
+{
+  "baseline_prototype_eer": 0.2401,
+  "results": [
+    {
+      "pool_w": 3,
+      "k_enroll": 20,
+      "proto": "mean",
+      "eer": 0.1143,
+      "ships": 22
+    },
+    {
+      "pool_w": 5,
+      "k_enroll": 20,
+      "proto": "mean",
+      "eer": 0.1145,
+      "ships": 22
+    },
+    {
+      "pool_w": 5,
+      "k_enroll": 10,
+      "proto": "mean",
+      "eer": 0.1263,
+      "ships": 22
+    },
+    {
+      "pool_w": 3,
+      "k_enroll": 10,
+      "proto": "mean",
+      "eer": 0.128,
+      "ships": 22
+    },
+    {
+      "pool_w": 5,
+      "k_enroll": 5,
+      "proto": "mean",
+      "eer": 0.1387,
+      "ships": 22
+    },
+    {
+      "pool_w": 3,
+      "k_enroll": 5,
+      "proto": "mean",
+      "eer": 0.156,
+      "ships": 22
+    },
+    {
+      "pool_w": 3,
+      "k_enroll": 20,
+      "proto": "medoid",
+      "eer": 0.1563,
+      "ships": 22
+    },
+    {
+      "pool_w": 5,
+      "k_enroll": 20,
+      "proto": "medoid",
+      "eer": 0.1685,
+      "ships": 22
+    },
+    {
+      "pool_w": 5,
+      "k_enroll": 5,
+      "proto": "medoid",
+      "eer": 0.1864,
+      "ships": 22
+    },
+    {
+      "pool_w": 5,
+      "k_enroll": 10,
+      "proto": "medoid",
+      "eer": 0.188,
+      "ships": 22
+    },
+    {
+      "pool_w": 1,
+      "k_enroll": 20,
+      "proto": "mean",
+      "eer": 0.1937,
+      "ships": 22
+    },
+    {
+      "pool_w": 3,
+      "k_enroll": 10,
+      "proto": "medoid",
+      "eer": 0.1961,
+      "ships": 22
+    },
+    {
+      "pool_w": 3,
+      "k_enroll": 5,
+      "proto": "medoid",
+      "eer": 0.2077,
+      "ships": 22
+    },
+    {
+      "pool_w": 1,
+      "k_enroll": 10,
+      "proto": "mean",
+      "eer": 0.2083,
+      "ships": 22
+    },
+    {
+      "pool_w": 1,
+      "k_enroll": 5,
+      "proto": "mean",
+      "eer": 0.2402,
+      "ships": 22
+    },
+    {
+      "pool_w": 1,
+      "k_enroll": 20,
+      "proto": "medoid",
+      "eer": 0.2646,
+      "ships": 22
+    },
+    {
+      "pool_w": 1,
+      "k_enroll": 5,
+      "proto": "medoid",
+      "eer": 0.2732,
+      "ships": 22
+    },
+    {
+      "pool_w": 1,
+      "k_enroll": 10,
+      "proto": "medoid",
+      "eer": 0.2753,
+      "ships": 22
+    }
+  ],
+  "best": {
+    "pool_w": 3,
+    "k_enroll": 20,
+    "proto": "mean",
+    "eer": 0.1143,
+    "ships": 22
+  }
+}

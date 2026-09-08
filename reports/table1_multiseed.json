@@ -1,0 +1,477 @@
+{
+  "experiment": "table1_multiseed",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "set_protocol_ref": {
+    "n_ships": 22,
+    "n_probe": 7194,
+    "k_enroll": 20,
+    "probe_w": 3
+  },
+  "methods": {
+    "arcface_clip_cosine": {
+      "method": "ArcFace + clip cosine",
+      "set_protocol": false,
+      "n_ships_per_seed": [
+        22,
+        22,
+        22,
+        22,
+        22
+      ],
+      "n_probe_per_seed": [
+        11026,
+        11026,
+        11026,
+        11026,
+        11026
+      ],
+      "clip_disjoint": "PASS",
+      "protocol": "clip_cosine",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "eers": [
+        0.3727,
+        0.3716,
+        0.3729,
+        0.3755,
+        0.374
+      ],
+      "top1s": [
+        0.9383,
+        0.9388,
+        0.9351,
+        0.9384,
+        0.9355
+      ],
+      "eer_mean": 0.3733,
+      "eer_std": 0.0015,
+      "top1_mean": 0.9372,
+      "top1_std": 0.0018,
+      "embeddings": "fingerprint_arcface_embeddings.npz",
+      "eval": "clip_cosine_eval",
+      "note": "Not set protocol; n_probe is clip-split count (~11026), not 7194."
+    },
+    "arcface_prototype_w1": {
+      "method": "ArcFace + prototype w=1",
+      "set_protocol": false,
+      "n_ships_per_seed": [
+        22,
+        22,
+        22,
+        22,
+        22
+      ],
+      "n_probe_per_seed": [
+        21600,
+        21600,
+        21600,
+        21600,
+        21600
+      ],
+      "clip_disjoint": "PASS",
+      "protocol": "prototype_single_probe",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "eers": [
+        0.1937,
+        0.1985,
+        0.2044,
+        0.1956,
+        0.1865
+      ],
+      "top1s": [
+        0.4999,
+        0.4766,
+        0.4676,
+        0.4931,
+        0.4951
+      ],
+      "eer_mean": 0.1957,
+      "eer_std": 0.0066,
+      "top1_mean": 0.4865,
+      "top1_std": 0.0137,
+      "embeddings": "fingerprint_arcface_embeddings.npz",
+      "eval": "certified_mean_eval probe_w=1",
+      "note": "probe_w=1 by design \u2014 NOT the set protocol (n_probe ~21600)."
+    },
+    "arcface_asnorm": {
+      "method": "ArcFace + AS-norm",
+      "set_protocol": true,
+      "n_ships_per_seed": [
+        22,
+        22,
+        22,
+        22,
+        22
+      ],
+      "n_probe_per_seed": [
+        7194,
+        7194,
+        7194,
+        7194,
+        7194
+      ],
+      "clip_disjoint": "PASS",
+      "protocol": "certified_mean_asnorm",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "eers": [
+        0.0805,
+        0.0808,
+        0.0877,
+        0.0847,
+        0.0693
+      ],
+      "top1s": [
+        0.7478,
+        0.756,
+        0.7253,
+        0.7292,
+        0.7641
+      ],
+      "eer_mean": 0.0806,
+      "eer_std": 0.007,
+      "top1_mean": 0.7445,
+      "top1_std": 0.0168,
+      "embeddings": "fingerprint_arcface_embeddings.npz",
+      "eval": "asnorm_set_eval"
+    },
+    "arcface_temporal_mean": {
+      "method": "ArcFace + temporal mean",
+      "set_protocol": true,
+      "n_ships_per_seed": [
+        22,
+        22,
+        22,
+        22,
+        22
+      ],
+      "n_probe_per_seed": [
+        7194,
+        7194,
+        7194,
+        7194,
+        7194
+      ],
+      "clip_disjoint": "PASS",
+      "protocol": "certified_mean",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "eers": [
+        0.096,
+        0.0976,
+        0.1054,
+        0.096,
+        0.0861
+      ],
+      "top1s": [
+        0.7478,
+        0.756,
+        0.7253,
+        0.7292,
+        0.7641
+      ],
+      "eer_mean": 0.0962,
+      "eer_std": 0.0069,
+      "top1_mean": 0.7445,
+      "top1_std": 0.0168,
+      "embeddings": "fingerprint_arcface_embeddings.npz",
+      "eval": "certified_mean_eval w=3"
+    },
+    "subcenter_attention": {
+      "method": "Sub-center + attention",
+      "set_protocol": true,
+      "n_ships_per_seed": [
+        22,
+        22,
+        22,
+        22,
+        22
+      ],
+      "n_probe_per_seed": [
+        7194,
+        7194,
+        7194,
+        7194,
+        7194
+      ],
+      "clip_disjoint": "PASS",
+      "protocol": "attention_set_disjoint",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "eers": [
+        0.0765,
+        0.072,
+        0.0739,
+        0.0805,
+        0.0678
+      ],
+      "top1s": [
+        0.8228,
+        0.8253,
+        0.8214,
+        0.8104,
+        0.8435
+      ],
+      "eer_mean": 0.0741,
+      "eer_std": 0.0048,
+      "top1_mean": 0.8247,
+      "top1_std": 0.012,
+      "embeddings": "fingerprint_attention_embeddings.npz + fingerprint_attention_ckpt.pt",
+      "eval": "attention_set_eval"
+    },
+    "triplet_temporal_mean": {
+      "method": "Triplet + temporal mean",
+      "set_protocol": true,
+      "n_ships_per_seed": [
+        22,
+        22,
+        22,
+        22,
+        22
+      ],
+      "n_probe_per_seed": [
+        7194,
+        7194,
+        7194,
+        7194,
+        7194
+      ],
+      "clip_disjoint": "PASS",
+      "protocol": "certified_mean",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "eers": [
+        0.4963,
+        0.4803,
+        0.494,
+        0.488,
+        0.4804
+      ],
+      "top1s": [
+        0.0881,
+        0.0716,
+        0.0724,
+        0.107,
+        0.0774
+      ],
+      "eer_mean": 0.4878,
+      "eer_std": 0.0074,
+      "top1_mean": 0.0833,
+      "top1_std": 0.0148,
+      "embeddings": "fingerprint_triplet_embeddings.npz",
+      "eval": "certified_mean_eval w=3"
+    },
+    "subcenter_mean": {
+      "method": "Sub-center + mean",
+      "set_protocol": true,
+      "n_ships_per_seed": [
+        22,
+        22,
+        22,
+        22,
+        22
+      ],
+      "n_probe_per_seed": [
+        7194,
+        7194,
+        7194,
+        7194,
+        7194
+      ],
+      "clip_disjoint": "PASS",
+      "protocol": "certified_mean",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "eers": [
+        0.0714,
+        0.0686,
+        0.0699,
+        0.0775,
+        0.0617
+      ],
+      "top1s": [
+        0.8325,
+        0.8488,
+        0.8331,
+        0.8133,
+        0.8479
+      ],
+      "eer_mean": 0.0698,
+      "eer_std": 0.0057,
+      "top1_mean": 0.8351,
+      "top1_std": 0.0145,
+      "embeddings": "fingerprint_attention_embeddings.npz",
+      "eval": "certified_mean_eval w=3",
+      "eer_ci95_mmsi": [
+        0.0223,
+        0.1071
+      ],
+      "top1_ci95_mmsi": [
+        0.7473,
+        0.9791
+      ],
+      "ci_note": "95% percentile CI from hierarchical bootstrap (draw eval seed, then resample MMSIs); see reports/mmsi_bootstrap.json"
+    },
+    "subcenter_stats_pool": {
+      "method": "Sub-center + stats-pool (ours)",
+      "set_protocol": true,
+      "n_ships_per_seed": [
+        22,
+        22,
+        22,
+        22,
+        22
+      ],
+      "n_probe_per_seed": [
+        7194,
+        7194,
+        7194,
+        7194,
+        7194
+      ],
+      "clip_disjoint": "PASS",
+      "protocol": "certified_stats_pool",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "eers": [
+        0.0627,
+        0.0675,
+        0.0605,
+        0.0667,
+        0.0571
+      ],
+      "top1s": [
+        0.8999,
+        0.927,
+        0.9149,
+        0.893,
+        0.9062
+      ],
+      "eer_mean": 0.0629,
+      "eer_std": 0.0043,
+      "top1_mean": 0.9082,
+      "top1_std": 0.0133,
+      "embeddings": "fingerprint_attention_embeddings.npz",
+      "eval": "stats_set_eval",
+      "eer_ci95_mmsi": [
+        0.035,
+        0.0861
+      ],
+      "top1_ci95_mmsi": [
+        0.8584,
+        0.9847
+      ],
+      "ci_note": "95% percentile CI from hierarchical bootstrap (draw eval seed, then resample MMSIs); see reports/mmsi_bootstrap.json"
+    },
+    "ecapa_stats_pool": {
+      "method": "ECAPA stats-pool",
+      "set_protocol": true,
+      "n_ships_per_seed": [
+        22,
+        22,
+        22,
+        22,
+        22
+      ],
+      "n_probe_per_seed": [
+        7194,
+        7194,
+        7194,
+        7194,
+        7194
+      ],
+      "clip_disjoint": "PASS",
+      "protocol": "certified_stats_pool",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "eers": [
+        0.1136,
+        0.0994,
+        0.097,
+        0.0953,
+        0.097
+      ],
+      "top1s": [
+        0.7602,
+        0.8001,
+        0.8075,
+        0.8148,
+        0.8076
+      ],
+      "eer_mean": 0.1005,
+      "eer_std": 0.0075,
+      "top1_mean": 0.798,
+      "top1_std": 0.0218,
+      "embeddings": "e2_ecapa_embeddings.npz",
+      "eval": "stats_set_eval",
+      "frontend_note": "ECAPA-TDNN native 16 kHz fbank + AAM; pipeline-level comparison.",
+      "eer_ci95_mmsi": [
+        0.0459,
+        0.1477
+      ],
+      "top1_ci95_mmsi": [
+        0.7155,
+        0.9565
+      ],
+      "ci_note": "95% percentile CI from hierarchical bootstrap (draw eval seed, then resample MMSIs); see reports/mmsi_bootstrap.json"
+    }
+  },
+  "e1a": {
+    "status": "SKIPPED_STRUCTURALLY_INFEASIBLE",
+    "n_surviving_test_vessels": 2,
+    "note": "No comparable 22-vessel E1a EER. See reports/e1_temporal.json e1a and optional secondary_n2 in e3_oscr / e1 update."
+  },
+  "mmsi_bootstrap_report": "reports/mmsi_bootstrap.json"
+}

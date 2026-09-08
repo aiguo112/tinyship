@@ -1,0 +1,662 @@
+[
+  {
+    "protocol": "random",
+    "train": {
+      "clips": 140772,
+      "ships": 222,
+      "sessions": 3617,
+      "background_clips": 31127,
+      "labels": {
+        "background": 31127,
+        "cargo": 29614,
+        "tug": 28517,
+        "passengership": 26548,
+        "tanker": 24966
+      }
+    },
+    "val": {
+      "clips": 17596,
+      "ships": 221,
+      "sessions": 2389,
+      "background_clips": 3901,
+      "labels": {
+        "background": 3901,
+        "cargo": 3762,
+        "tug": 3536,
+        "passengership": 3257,
+        "tanker": 3140
+      }
+    },
+    "test": {
+      "clips": 17597,
+      "ships": 221,
+      "sessions": 2379,
+      "background_clips": 3880,
+      "labels": {
+        "background": 3880,
+        "cargo": 3718,
+        "tug": 3579,
+        "passengership": 3375,
+        "tanker": 3045
+      }
+    },
+    "mmsi_overlap": {
+      "train_val": 221,
+      "train_test": 221,
+      "val_test": 220
+    },
+    "session_overlap": {
+      "train_val": 2299,
+      "train_test": 2298,
+      "val_test": 1947
+    },
+    "file_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "sha256_overlap": {
+      "train_val": 3816,
+      "train_test": 3742,
+      "val_test": 700
+    },
+    "date_overlap": {
+      "train_val": 129,
+      "train_test": 129,
+      "val_test": 129,
+      "train_date_range": [
+        20170624,
+        20171103
+      ],
+      "val_date_range": [
+        20170624,
+        20171103
+      ],
+      "test_date_range": [
+        20170624,
+        20171103
+      ]
+    },
+    "scenario_overlap": {
+      "train_val": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ],
+      "train_test": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ],
+      "val_test": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ],
+      "train_scenarios": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ],
+      "val_scenarios": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ],
+      "test_scenarios": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ]
+    },
+    "mmsi_leakage": true,
+    "session_leakage": true
+  },
+  {
+    "protocol": "mmsi",
+    "train": {
+      "clips": 132494,
+      "ships": 178,
+      "sessions": 3750,
+      "background_clips": 31126,
+      "labels": {
+        "background": 31126,
+        "tug": 29512,
+        "tanker": 26806,
+        "cargo": 26009,
+        "passengership": 19041
+      }
+    },
+    "val": {
+      "clips": 17540,
+      "ships": 22,
+      "sessions": 2290,
+      "background_clips": 3891,
+      "labels": {
+        "tug": 5520,
+        "background": 3891,
+        "tanker": 3716,
+        "passengership": 2382,
+        "cargo": 2031
+      }
+    },
+    "test": {
+      "clips": 25931,
+      "ships": 22,
+      "sessions": 2285,
+      "background_clips": 3891,
+      "labels": {
+        "passengership": 11757,
+        "cargo": 9054,
+        "background": 3891,
+        "tanker": 629,
+        "tug": 600
+      }
+    },
+    "mmsi_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "session_overlap": {
+      "train_val": 2276,
+      "train_test": 2266,
+      "val_test": 1916
+    },
+    "file_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "sha256_overlap": {
+      "train_val": 31,
+      "train_test": 27,
+      "val_test": 16
+    },
+    "date_overlap": {
+      "train_val": 67,
+      "train_test": 94,
+      "val_test": 55,
+      "train_date_range": [
+        20170624,
+        20171103
+      ],
+      "val_date_range": [
+        20170625,
+        20171103
+      ],
+      "test_date_range": [
+        20170625,
+        20171103
+      ]
+    },
+    "scenario_overlap": {
+      "train_val": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ],
+      "train_test": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ],
+      "val_test": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ],
+      "train_scenarios": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ],
+      "val_scenarios": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ],
+      "test_scenarios": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ]
+    },
+    "mmsi_leakage": false,
+    "session_leakage": true
+  },
+  {
+    "protocol": "session",
+    "train": {
+      "clips": 143788,
+      "ships": 222,
+      "sessions": 3026,
+      "background_clips": 31313,
+      "labels": {
+        "background": 31313,
+        "cargo": 30534,
+        "tug": 29210,
+        "passengership": 27175,
+        "tanker": 25556
+      }
+    },
+    "val": {
+      "clips": 16232,
+      "ships": 221,
+      "sessions": 378,
+      "background_clips": 3754,
+      "labels": {
+        "background": 3754,
+        "cargo": 3313,
+        "tug": 3284,
+        "passengership": 3018,
+        "tanker": 2863
+      }
+    },
+    "test": {
+      "clips": 15945,
+      "ships": 221,
+      "sessions": 378,
+      "background_clips": 3841,
+      "labels": {
+        "background": 3841,
+        "cargo": 3247,
+        "tug": 3138,
+        "passengership": 2987,
+        "tanker": 2732
+      }
+    },
+    "mmsi_overlap": {
+      "train_val": 221,
+      "train_test": 221,
+      "val_test": 220
+    },
+    "session_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "file_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "sha256_overlap": {
+      "train_val": 1727,
+      "train_test": 2008,
+      "val_test": 156
+    },
+    "date_overlap": {
+      "train_val": 129,
+      "train_test": 129,
+      "val_test": 129,
+      "train_date_range": [
+        20170624,
+        20171103
+      ],
+      "val_date_range": [
+        20170624,
+        20171103
+      ],
+      "test_date_range": [
+        20170624,
+        20171103
+      ]
+    },
+    "scenario_overlap": {
+      "train_val": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ],
+      "train_test": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ],
+      "val_test": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ],
+      "train_scenarios": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ],
+      "val_scenarios": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ],
+      "test_scenarios": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ]
+    },
+    "mmsi_leakage": true,
+    "session_leakage": false
+  },
+  {
+    "protocol": "temporal",
+    "train": {
+      "clips": 135389,
+      "ships": 180,
+      "sessions": 3738,
+      "background_clips": 29686,
+      "labels": {
+        "cargo": 30103,
+        "background": 29686,
+        "tug": 26752,
+        "passengership": 25922,
+        "tanker": 22926
+      }
+    },
+    "val": {
+      "clips": 23516,
+      "ships": 43,
+      "sessions": 2439,
+      "background_clips": 4240,
+      "labels": {
+        "tanker": 7596,
+        "tug": 4826,
+        "background": 4240,
+        "cargo": 3681,
+        "passengership": 3173
+      }
+    },
+    "test": {
+      "clips": 17060,
+      "ships": 33,
+      "sessions": 2456,
+      "background_clips": 4982,
+      "labels": {
+        "background": 4982,
+        "passengership": 4085,
+        "tug": 4054,
+        "cargo": 3310,
+        "tanker": 629
+      }
+    },
+    "mmsi_overlap": {
+      "train_val": 19,
+      "train_test": 14,
+      "val_test": 12
+    },
+    "session_overlap": {
+      "train_val": 2417,
+      "train_test": 2430,
+      "val_test": 2116
+    },
+    "file_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "sha256_overlap": {
+      "train_val": 1,
+      "train_test": 1,
+      "val_test": 1
+    },
+    "date_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0,
+      "train_date_range": [
+        20170624,
+        20171006
+      ],
+      "val_date_range": [
+        20171007,
+        20171019
+      ],
+      "test_date_range": [
+        20171020,
+        20171103
+      ]
+    },
+    "scenario_overlap": {
+      "train_val": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ],
+      "train_test": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ],
+      "val_test": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ],
+      "train_scenarios": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ],
+      "val_scenarios": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ],
+      "test_scenarios": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ]
+    },
+    "mmsi_leakage": true,
+    "session_leakage": true
+  },
+  {
+    "protocol": "scenario",
+    "train": {
+      "clips": 35428,
+      "ships": 103,
+      "sessions": 3105,
+      "background_clips": 9249,
+      "labels": {
+        "background": 9249,
+        "cargo": 8861,
+        "tug": 8294,
+        "tanker": 6186,
+        "passengership": 2838
+      }
+    },
+    "val": {
+      "clips": 63269,
+      "ships": 107,
+      "sessions": 3288,
+      "background_clips": 16200,
+      "labels": {
+        "background": 16200,
+        "cargo": 15041,
+        "tug": 13819,
+        "passengership": 13364,
+        "tanker": 4845
+      }
+    },
+    "test": {
+      "clips": 49321,
+      "ships": 92,
+      "sessions": 2834,
+      "background_clips": 12948,
+      "labels": {
+        "background": 12948,
+        "cargo": 11335,
+        "tug": 11231,
+        "passengership": 10127,
+        "tanker": 3680
+      }
+    },
+    "mmsi_overlap": {
+      "train_val": 29,
+      "train_test": 33,
+      "val_test": 42
+    },
+    "session_overlap": {
+      "train_val": 2704,
+      "train_test": 2560,
+      "val_test": 2721
+    },
+    "file_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "sha256_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "date_overlap": {
+      "train_val": 100,
+      "train_test": 99,
+      "val_test": 106,
+      "train_date_range": [
+        20170625,
+        20171103
+      ],
+      "val_date_range": [
+        20170625,
+        20171103
+      ],
+      "test_date_range": [
+        20170624,
+        20171103
+      ]
+    },
+    "scenario_overlap": {
+      "train_val": [],
+      "train_test": [],
+      "val_test": [],
+      "train_scenarios": [
+        "inclusion_2000_exclusion_4000"
+      ],
+      "val_scenarios": [
+        "inclusion_3000_exclusion_5000"
+      ],
+      "test_scenarios": [
+        "inclusion_4000_exclusion_6000"
+      ]
+    },
+    "mmsi_leakage": true,
+    "session_leakage": true
+  },
+  {
+    "protocol": "official",
+    "train": {
+      "clips": 152310,
+      "ships": 222,
+      "sessions": 3611,
+      "background_clips": 30462,
+      "labels": {
+        "cargo": 30462,
+        "tug": 30462,
+        "background": 30462,
+        "tanker": 30462,
+        "passengership": 30462
+      }
+    },
+    "val": {
+      "clips": 15770,
+      "ships": 221,
+      "sessions": 2630,
+      "background_clips": 5707,
+      "labels": {
+        "background": 5707,
+        "cargo": 4393,
+        "tug": 3404,
+        "passengership": 1814,
+        "tanker": 452
+      }
+    },
+    "test": {
+      "clips": 7885,
+      "ships": 219,
+      "sessions": 2101,
+      "background_clips": 2739,
+      "labels": {
+        "background": 2739,
+        "cargo": 2239,
+        "tug": 1766,
+        "passengership": 904,
+        "tanker": 237
+      }
+    },
+    "mmsi_overlap": {
+      "train_val": 221,
+      "train_test": 219,
+      "val_test": 219
+    },
+    "session_overlap": {
+      "train_val": 2508,
+      "train_test": 2042,
+      "val_test": 1874
+    },
+    "file_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "sha256_overlap": {
+      "train_val": 1294,
+      "train_test": 639,
+      "val_test": 67
+    },
+    "date_overlap": {
+      "train_val": 129,
+      "train_test": 129,
+      "val_test": 129,
+      "train_date_range": [
+        20170624,
+        20171103
+      ],
+      "val_date_range": [
+        20170624,
+        20171103
+      ],
+      "test_date_range": [
+        20170624,
+        20171103
+      ]
+    },
+    "scenario_overlap": {
+      "train_val": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ],
+      "train_test": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ],
+      "val_test": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ],
+      "train_scenarios": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ],
+      "val_scenarios": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ],
+      "test_scenarios": [
+        "inclusion_2000_exclusion_4000",
+        "inclusion_3000_exclusion_5000",
+        "inclusion_4000_exclusion_6000"
+      ]
+    },
+    "mmsi_leakage": true,
+    "session_leakage": true
+  }
+]

@@ -1,0 +1,1038 @@
+{
+  "availability": {
+    "local_wav_paths_on_disk": 43042,
+    "manifest_rows": 21521,
+    "unique_sha256": 10638,
+    "archives_listed_in_status": 150,
+    "status_completeness": "partial_or_unknown",
+    "official_github": "https://github.com/xiaoyangdu22/QiandaoEar22",
+    "ieee_dataport": "https://ieee-dataport.org/documents/qiandaoear22",
+    "onedrive": "https://mailsucasaccn-my.sharepoint.com/:f:/g/personal/duxiaoyang22_mails_ucas_ac_cn/EomiGNu7mO5FmUke62y6Q7IBIP64kpJrJMJOZp_c-qkFAA?e=x8gxuL",
+    "note": "Local set is present (IEEE/OneDrive archives extracted). Disk WAV count >> unique SHA256 due to duplicate extracts / 副本 copies. Paper reports 10,611 ship + 25,900 noise records; local unique content is compared below."
+  },
+  "identity": {
+    "unique_vessel_name_labels": 27,
+    "vessel_names": [
+      "ArtificialSignals",
+      "BigPassengerShip",
+      "Car",
+      "Cargo",
+      "CivilianBoats",
+      "FishBoat",
+      "GreenCity",
+      "Helicopter",
+      "KaiYan",
+      "KaiYuan",
+      "M_S",
+      "MotorBoat",
+      "N_S",
+      "No5",
+      "No7",
+      "No7_Slow_Down_1",
+      "PoliceBoat",
+      "QianDao",
+      "QianDao296",
+      "QianDao351",
+      "QianDao_M_MS",
+      "SpeedBoat",
+      "TheEarl",
+      "TheKnight",
+      "UUV",
+      "Unknown",
+      "WorkShip"
+    ],
+    "clips_per_vessel_name": {
+      "SpeedBoat": 6904,
+      "QianDao": 4925,
+      "KaiYuan": 1947,
+      "No7": 1412,
+      "ArtificialSignals": 972,
+      "UUV": 902,
+      "GreenCity": 751,
+      "TheEarl": 559,
+      "Unknown": 501,
+      "Cargo": 478,
+      "FishBoat": 460,
+      "TheKnight": 360,
+      "WorkShip": 251,
+      "KaiYan": 170,
+      "BigPassengerShip": 135,
+      "MotorBoat": 100,
+      "PoliceBoat": 100,
+      "Car": 100,
+      "QianDao296": 52,
+      "CivilianBoats": 51,
+      "No5": 29,
+      "QianDao351": 25,
+      "Helicopter": 19,
+      "N_S": 15,
+      "M_S": 13,
+      "QianDao_M_MS": 10,
+      "No7_Slow_Down_1": 8
+    },
+    "unique_ship_labeled_files": 10588,
+    "dates": [
+      "20220624",
+      "20220625",
+      "20220626",
+      "20220628"
+    ],
+    "n_dates": 4,
+    "n_timestamps": 130,
+    "distance_counts": {
+      "M": 13184,
+      "F": 8826,
+      "N": 7041,
+      "nan": 1092
+    },
+    "audibility_counts": {
+      "M": 13148,
+      "W": 9987,
+      "S": 5916,
+      "nan": 1092
+    },
+    "single_multi_file_counts": {
+      "M": 8982,
+      "S": 1606
+    },
+    "sample_rates_observed": {
+      "52734": 51
+    },
+    "paper_claim": "Filenames encode vessel name + distance(N/M/F) + audibility(S/M/W) + single/multi (S/M). Paper: ~20 ship-target categories; NOT AIS/MMSI IDs."
+  },
+  "gates_all_targets": {
+    "by_date": {
+      "gate_vessels_ge2_occasions_ge20clips": 9,
+      "vessels_total": 27,
+      "occasion_count_hist": {
+        "0": 5,
+        "1": 13,
+        "2": 6,
+        "3": 1,
+        "4": 2
+      },
+      "vessels_with_ge2_any_occasion": 9,
+      "per_ship": [
+        {
+          "ship": "ArtificialSignals",
+          "n_occasions_any": 2,
+          "n_occasions_ge20": 2
+        },
+        {
+          "ship": "BigPassengerShip",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "Car",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "Cargo",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "CivilianBoats",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "FishBoat",
+          "n_occasions_any": 2,
+          "n_occasions_ge20": 2
+        },
+        {
+          "ship": "GreenCity",
+          "n_occasions_any": 2,
+          "n_occasions_ge20": 2
+        },
+        {
+          "ship": "Helicopter",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "KaiYan",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "KaiYuan",
+          "n_occasions_any": 2,
+          "n_occasions_ge20": 2
+        },
+        {
+          "ship": "M_S",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "MotorBoat",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "N_S",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "No5",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "No7",
+          "n_occasions_any": 4,
+          "n_occasions_ge20": 4
+        },
+        {
+          "ship": "No7_Slow_Down_1",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "PoliceBoat",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "QianDao",
+          "n_occasions_any": 2,
+          "n_occasions_ge20": 2
+        },
+        {
+          "ship": "QianDao296",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "QianDao351",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "QianDao_M_MS",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "SpeedBoat",
+          "n_occasions_any": 4,
+          "n_occasions_ge20": 4
+        },
+        {
+          "ship": "TheEarl",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "TheKnight",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "UUV",
+          "n_occasions_any": 2,
+          "n_occasions_ge20": 2
+        },
+        {
+          "ship": "Unknown",
+          "n_occasions_any": 3,
+          "n_occasions_ge20": 3
+        },
+        {
+          "ship": "WorkShip",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        }
+      ]
+    },
+    "by_distance": {
+      "gate_vessels_ge2_occasions_ge20clips": 10,
+      "vessels_total": 27,
+      "occasion_count_hist": {
+        "0": 6,
+        "1": 11,
+        "2": 2,
+        "3": 8
+      },
+      "vessels_with_ge2_any_occasion": 11,
+      "per_ship": [
+        {
+          "ship": "ArtificialSignals",
+          "n_occasions_any": 0,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "BigPassengerShip",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "Car",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "Cargo",
+          "n_occasions_any": 3,
+          "n_occasions_ge20": 3
+        },
+        {
+          "ship": "CivilianBoats",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "FishBoat",
+          "n_occasions_any": 2,
+          "n_occasions_ge20": 2
+        },
+        {
+          "ship": "GreenCity",
+          "n_occasions_any": 3,
+          "n_occasions_ge20": 3
+        },
+        {
+          "ship": "Helicopter",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "KaiYan",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "KaiYuan",
+          "n_occasions_any": 3,
+          "n_occasions_ge20": 3
+        },
+        {
+          "ship": "M_S",
+          "n_occasions_any": 0,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "MotorBoat",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "N_S",
+          "n_occasions_any": 0,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "No5",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "No7",
+          "n_occasions_any": 3,
+          "n_occasions_ge20": 3
+        },
+        {
+          "ship": "No7_Slow_Down_1",
+          "n_occasions_any": 0,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "PoliceBoat",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "QianDao",
+          "n_occasions_any": 3,
+          "n_occasions_ge20": 3
+        },
+        {
+          "ship": "QianDao296",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "QianDao351",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "QianDao_M_MS",
+          "n_occasions_any": 0,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "SpeedBoat",
+          "n_occasions_any": 3,
+          "n_occasions_ge20": 3
+        },
+        {
+          "ship": "TheEarl",
+          "n_occasions_any": 2,
+          "n_occasions_ge20": 2
+        },
+        {
+          "ship": "TheKnight",
+          "n_occasions_any": 3,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "UUV",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "Unknown",
+          "n_occasions_any": 3,
+          "n_occasions_ge20": 3
+        },
+        {
+          "ship": "WorkShip",
+          "n_occasions_any": 3,
+          "n_occasions_ge20": 3
+        }
+      ]
+    },
+    "by_audibility": {
+      "gate_vessels_ge2_occasions_ge20clips": 12,
+      "vessels_total": 27,
+      "occasion_count_hist": {
+        "0": 6,
+        "1": 9,
+        "2": 3,
+        "3": 9
+      },
+      "vessels_with_ge2_any_occasion": 12,
+      "per_ship": [
+        {
+          "ship": "ArtificialSignals",
+          "n_occasions_any": 0,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "BigPassengerShip",
+          "n_occasions_any": 3,
+          "n_occasions_ge20": 3
+        },
+        {
+          "ship": "Car",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "Cargo",
+          "n_occasions_any": 3,
+          "n_occasions_ge20": 3
+        },
+        {
+          "ship": "CivilianBoats",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "FishBoat",
+          "n_occasions_any": 2,
+          "n_occasions_ge20": 2
+        },
+        {
+          "ship": "GreenCity",
+          "n_occasions_any": 3,
+          "n_occasions_ge20": 3
+        },
+        {
+          "ship": "Helicopter",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "KaiYan",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "KaiYuan",
+          "n_occasions_any": 3,
+          "n_occasions_ge20": 3
+        },
+        {
+          "ship": "M_S",
+          "n_occasions_any": 0,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "MotorBoat",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "N_S",
+          "n_occasions_any": 0,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "No5",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "No7",
+          "n_occasions_any": 3,
+          "n_occasions_ge20": 3
+        },
+        {
+          "ship": "No7_Slow_Down_1",
+          "n_occasions_any": 0,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "PoliceBoat",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "QianDao",
+          "n_occasions_any": 3,
+          "n_occasions_ge20": 3
+        },
+        {
+          "ship": "QianDao296",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "QianDao351",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "QianDao_M_MS",
+          "n_occasions_any": 0,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "SpeedBoat",
+          "n_occasions_any": 3,
+          "n_occasions_ge20": 3
+        },
+        {
+          "ship": "TheEarl",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "TheKnight",
+          "n_occasions_any": 2,
+          "n_occasions_ge20": 2
+        },
+        {
+          "ship": "UUV",
+          "n_occasions_any": 2,
+          "n_occasions_ge20": 2
+        },
+        {
+          "ship": "Unknown",
+          "n_occasions_any": 3,
+          "n_occasions_ge20": 3
+        },
+        {
+          "ship": "WorkShip",
+          "n_occasions_any": 3,
+          "n_occasions_ge20": 3
+        }
+      ]
+    },
+    "by_date_distance": {
+      "gate_vessels_ge2_occasions_ge20clips": 11,
+      "vessels_total": 27,
+      "occasion_count_hist": {
+        "0": 6,
+        "1": 10,
+        "2": 2,
+        "3": 3,
+        "4": 1,
+        "5": 2,
+        "6": 1,
+        "8": 1,
+        "12": 1
+      },
+      "vessels_with_ge2_any_occasion": 12,
+      "per_ship": [
+        {
+          "ship": "ArtificialSignals",
+          "n_occasions_any": 0,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "BigPassengerShip",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "Car",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "Cargo",
+          "n_occasions_any": 3,
+          "n_occasions_ge20": 3
+        },
+        {
+          "ship": "CivilianBoats",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "FishBoat",
+          "n_occasions_any": 3,
+          "n_occasions_ge20": 3
+        },
+        {
+          "ship": "GreenCity",
+          "n_occasions_any": 5,
+          "n_occasions_ge20": 5
+        },
+        {
+          "ship": "Helicopter",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "KaiYan",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "KaiYuan",
+          "n_occasions_any": 5,
+          "n_occasions_ge20": 5
+        },
+        {
+          "ship": "M_S",
+          "n_occasions_any": 0,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "MotorBoat",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "N_S",
+          "n_occasions_any": 0,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "No5",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "No7",
+          "n_occasions_any": 9,
+          "n_occasions_ge20": 8
+        },
+        {
+          "ship": "No7_Slow_Down_1",
+          "n_occasions_any": 0,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "PoliceBoat",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "QianDao",
+          "n_occasions_any": 6,
+          "n_occasions_ge20": 6
+        },
+        {
+          "ship": "QianDao296",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "QianDao351",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "QianDao_M_MS",
+          "n_occasions_any": 0,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "SpeedBoat",
+          "n_occasions_any": 12,
+          "n_occasions_ge20": 12
+        },
+        {
+          "ship": "TheEarl",
+          "n_occasions_any": 2,
+          "n_occasions_ge20": 2
+        },
+        {
+          "ship": "TheKnight",
+          "n_occasions_any": 3,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "UUV",
+          "n_occasions_any": 2,
+          "n_occasions_ge20": 2
+        },
+        {
+          "ship": "Unknown",
+          "n_occasions_any": 4,
+          "n_occasions_ge20": 4
+        },
+        {
+          "ship": "WorkShip",
+          "n_occasions_any": 3,
+          "n_occasions_ge20": 3
+        }
+      ]
+    },
+    "by_date_audibility": {
+      "gate_vessels_ge2_occasions_ge20clips": 12,
+      "vessels_total": 27,
+      "occasion_count_hist": {
+        "0": 6,
+        "1": 9,
+        "2": 2,
+        "3": 4,
+        "4": 1,
+        "5": 2,
+        "6": 1,
+        "8": 1,
+        "12": 1
+      },
+      "vessels_with_ge2_any_occasion": 12,
+      "per_ship": [
+        {
+          "ship": "ArtificialSignals",
+          "n_occasions_any": 0,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "BigPassengerShip",
+          "n_occasions_any": 3,
+          "n_occasions_ge20": 3
+        },
+        {
+          "ship": "Car",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "Cargo",
+          "n_occasions_any": 3,
+          "n_occasions_ge20": 3
+        },
+        {
+          "ship": "CivilianBoats",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "FishBoat",
+          "n_occasions_any": 3,
+          "n_occasions_ge20": 3
+        },
+        {
+          "ship": "GreenCity",
+          "n_occasions_any": 5,
+          "n_occasions_ge20": 5
+        },
+        {
+          "ship": "Helicopter",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "KaiYan",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "KaiYuan",
+          "n_occasions_any": 5,
+          "n_occasions_ge20": 5
+        },
+        {
+          "ship": "M_S",
+          "n_occasions_any": 0,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "MotorBoat",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "N_S",
+          "n_occasions_any": 0,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "No5",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "No7",
+          "n_occasions_any": 9,
+          "n_occasions_ge20": 8
+        },
+        {
+          "ship": "No7_Slow_Down_1",
+          "n_occasions_any": 0,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "PoliceBoat",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "QianDao",
+          "n_occasions_any": 6,
+          "n_occasions_ge20": 6
+        },
+        {
+          "ship": "QianDao296",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "QianDao351",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "QianDao_M_MS",
+          "n_occasions_any": 0,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "SpeedBoat",
+          "n_occasions_any": 12,
+          "n_occasions_ge20": 12
+        },
+        {
+          "ship": "TheEarl",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "TheKnight",
+          "n_occasions_any": 2,
+          "n_occasions_ge20": 2
+        },
+        {
+          "ship": "UUV",
+          "n_occasions_any": 2,
+          "n_occasions_ge20": 2
+        },
+        {
+          "ship": "Unknown",
+          "n_occasions_any": 4,
+          "n_occasions_ge20": 4
+        },
+        {
+          "ship": "WorkShip",
+          "n_occasions_any": 3,
+          "n_occasions_ge20": 3
+        }
+      ]
+    },
+    "by_distance_audibility": {
+      "gate_vessels_ge2_occasions_ge20clips": 13,
+      "vessels_total": 27,
+      "occasion_count_hist": {
+        "0": 6,
+        "1": 8,
+        "2": 4,
+        "3": 2,
+        "4": 3,
+        "6": 2,
+        "7": 1,
+        "8": 1
+      },
+      "vessels_with_ge2_any_occasion": 13,
+      "per_ship": [
+        {
+          "ship": "ArtificialSignals",
+          "n_occasions_any": 0,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "BigPassengerShip",
+          "n_occasions_any": 3,
+          "n_occasions_ge20": 3
+        },
+        {
+          "ship": "Car",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "Cargo",
+          "n_occasions_any": 6,
+          "n_occasions_ge20": 6
+        },
+        {
+          "ship": "CivilianBoats",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "FishBoat",
+          "n_occasions_any": 2,
+          "n_occasions_ge20": 2
+        },
+        {
+          "ship": "GreenCity",
+          "n_occasions_any": 4,
+          "n_occasions_ge20": 4
+        },
+        {
+          "ship": "Helicopter",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "KaiYan",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "KaiYuan",
+          "n_occasions_any": 6,
+          "n_occasions_ge20": 6
+        },
+        {
+          "ship": "M_S",
+          "n_occasions_any": 0,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "MotorBoat",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "N_S",
+          "n_occasions_any": 0,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "No5",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "No7",
+          "n_occasions_any": 6,
+          "n_occasions_ge20": 4
+        },
+        {
+          "ship": "No7_Slow_Down_1",
+          "n_occasions_any": 0,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "PoliceBoat",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "QianDao",
+          "n_occasions_any": 7,
+          "n_occasions_ge20": 7
+        },
+        {
+          "ship": "QianDao296",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "QianDao351",
+          "n_occasions_any": 1,
+          "n_occasions_ge20": 1
+        },
+        {
+          "ship": "QianDao_M_MS",
+          "n_occasions_any": 0,
+          "n_occasions_ge20": 0
+        },
+        {
+          "ship": "SpeedBoat",
+          "n_occasions_any": 8,
+          "n_occasions_ge20": 8
+        },
+        {
+          "ship": "TheEarl",
+          "n_occasions_any": 2,
+          "n_occasions_ge20": 2
+        },
+        {
+          "ship": "TheKnight",
+          "n_occasions_any": 4,
+          "n_occasions_ge20": 2
+        },
+        {
+          "ship": "UUV",
+          "n_occasions_any": 2,
+          "n_occasions_ge20": 2
+        },
+        {
+          "ship": "Unknown",
+          "n_occasions_any": 3,
+          "n_occasions_ge20": 3
+        },
+        {
+          "ship": "WorkShip",
+          "n_occasions_any": 4,
+          "n_occasions_ge20": 4
+        }
+      ]
+    }
+  },
+  "gate_by_timestamp_ge2_occ_ge20": 16,
+  "gates_single_target_only": {
+    "by_date": 2,
+    "by_distance": 3,
+    "by_audibility": 3,
+    "by_timestamp": 2
+  },
+  "unparsed_count": 50,
+  "unparsed_examples": [
+    "DATA0032.WAV",
+    "DATA0033.WAV",
+    "DATA0034.WAV",
+    "DATA0145.WAV",
+    "DATA0146.WAV",
+    "DATA0147.WAV",
+    "DATA0039.WAV",
+    "DATA0040.WAV",
+    "DATA0041.WAV",
+    "DATA0148.WAV",
+    "DATA0149.WAV",
+    "DATA0150.WAV",
+    "DATA0042.WAV",
+    "DATA0043.WAV",
+    "DATA0044.WAV",
+    "DATA0151.WAV",
+    "DATA0152.WAV",
+    "DATA0153.WAV",
+    "DATA0045.WAV",
+    "DATA0047.WAV"
+  ]
+}

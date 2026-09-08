@@ -1,0 +1,139 @@
+{
+  "experiment": "E2",
+  "status": "e2_1_complete",
+  "implementation": "SpeechBrain 1.0.3 ECAPA_TDNN (Desplanques et al. 2020); torchaudio 2.11 compat shim: list_audio_backends -> ['soundfile']",
+  "frontend": {
+    "choice": "fbank",
+    "details": {
+      "sample_rate": 16000,
+      "n_mels": 80,
+      "win_ms": 25,
+      "hop_ms": 10,
+      "n_fft": 400,
+      "hop_length": 160,
+      "win_length": 400,
+      "frames_per_1s": 101,
+      "cmvn": "per-utterance mean subtract",
+      "source_audio": "VTUAD 1s clips @ 32kHz resampled to 16kHz",
+      "note": "Native ECAPA/SpeechBrain-style log-mel fbank, NOT our CQT+MFCC 2-ch. Labeled as a separate comparison row."
+    },
+    "protocol_label": "ECAPA-TDNN (fbank)"
+  },
+  "params": {
+    "ecapa": 6194048,
+    "ecapa_fp32_mb": 24.776,
+    "classifier_aam_178": 34176,
+    "ours_mobilenet": 98640,
+    "ours_fp32_mb": 0.395,
+    "ratio": 62.79
+  },
+  "dry_forward": {
+    "emb_dim": 192,
+    "input_shape": [
+      8,
+      101,
+      80
+    ],
+    "emb_shape": [
+      8,
+      1,
+      192
+    ],
+    "ok": true
+  },
+  "cost_estimate": {
+    "seconds_per_step": 0.03931,
+    "seconds_per_step_bs8": 0.03985,
+    "seconds_per_step_bs128": 0.05003,
+    "batch_size_assumed": 32,
+    "est_full_train_hours": 4.151,
+    "est_full_train_hours_bs128": 1.321,
+    "assumed_epochs": 120,
+    "assumed_steps_per_epoch": 3168,
+    "n_train_clips": 101368,
+    "max_cuda_mem_mb": 2534.8,
+    "note": "Timed forward+backward+Adam on synthetic batch of real-clip fbank (feature extract outside timed loop for bs>8 reuse). Excludes dataloader/IO overhead; real wall-clock may be ~1.2\u20131.5x."
+  },
+  "e2_1_plan": {
+    "split": "178 train / 22 unseen test MMSI-disjoint (data/processed/splits/mmsi_*.csv)",
+    "frontend": "fbank 16kHz 80-mel win25ms hop10ms; label row ECAPA-TDNN (fbank)",
+    "objective": "SpeechBrain default: Additive Angular Margin (AAM-softmax) via LogSoftmaxWrapper(AdditiveAngularMargin); NOT our SubCenter ArcFace (K=3). Document AAM vs SubCenter in table notes.",
+    "encoder": "ECAPA_TDNN(input_size=80, lin_neurons=192) ~6M params",
+    "eval": "certified_verify.py k_enroll=20 probe_w=3 seeds 0-4; mean\u00b1std",
+    "save_before_score": "weights + embeddings before scoring (mandatory)",
+    "epochs_bs": "120 epochs, prefer bs=32 (or 128 if stable); Adam/AdamW"
+  },
+  "commands": [
+    ". .\\scripts\\use_tinyship.ps1",
+    "pip install \"speechbrain>=1.0,<1.1\"",
+    "python scripts/reproduce/e2_0_ecapa_feasibility.py"
+  ],
+  "blocker": null,
+  "ready_for_e2_1": true,
+  "speechbrain_version": "1.0.3",
+  "torch_cuda": "12.8",
+  "gpu": "NVIDIA GeForce RTX 5070 Ti",
+  "e2_1": {
+    "protocol_label": "ECAPA-TDNN (fbank)",
+    "objective": "SpeechBrain AAM-softmax via LogSoftmaxWrapper(AdditiveAngularMargin(margin=0.2, scale=30.0)); NOT SubCenter ArcFace",
+    "n_ships": 22,
+    "n_probe": 7194,
+    "clip_disjoint": "PASS",
+    "mean_pool": {
+      "eer_mean": 0.1053,
+      "eer_std": 0.0117,
+      "eers": [
+        0.1212,
+        0.114,
+        0.0936,
+        0.0985,
+        0.099
+      ],
+      "top1_mean": 0.734,
+      "top1_std": 0.0243,
+      "top1s": [
+        0.7014,
+        0.7153,
+        0.7494,
+        0.7572,
+        0.7469
+      ]
+    },
+    "stats_pool": {
+      "eer_mean": 0.1005,
+      "eer_std": 0.0075,
+      "eers": [
+        0.1136,
+        0.0994,
+        0.097,
+        0.0953,
+        0.097
+      ],
+      "top1_mean": 0.798,
+      "top1_std": 0.0218,
+      "top1s": [
+        0.7602,
+        0.8001,
+        0.8075,
+        0.8148,
+        0.8076
+      ]
+    },
+    "vs_ours_stats_pool": {
+      "ours_eer": 0.0629,
+      "ecapa_best_eer": 0.1005,
+      "delta": 0.0376,
+      "params_ratio": 62.8
+    },
+    "params": 6194048,
+    "epochs": 120,
+    "bs": 128,
+    "wall_clock_hours": 3.033,
+    "commands": [
+      ". .\\scripts\\use_tinyship.ps1",
+      "python scripts/reproduce/train_e2_ecapa.py --bs 128 --epochs 120",
+      "python scripts/reproduce/score_e2_ecapa.py"
+    ]
+  },
+  "ready_for_e3": true
+}

@@ -1,0 +1,67 @@
+{
+  "mapping": {
+    "near": "2-4 km = inclusion_2000_exclusion_4000",
+    "mid": "3-5 km = inclusion_3000_exclusion_5000",
+    "far": "4-6 km = inclusion_4000_exclusion_6000",
+    "verified": true
+  },
+  "frozen_ships": 100,
+  "n_overlap_dates": 74,
+  "n_overlap_session_pairs": 6478,
+  "levels": [
+    {
+      "level": "0_baseline_ship_in_both_bands",
+      "surviving_ships_in_both": 30,
+      "train_clips": 15754,
+      "test_clips": 29661,
+      "class_count": 30,
+      "train_ships_any": 46,
+      "test_ships_any": 57,
+      "raw_near_clips": 27731,
+      "raw_far_clips": 41721
+    },
+    {
+      "level": "a_date_disjoint",
+      "surviving_ships_in_both": 7,
+      "train_clips": 1495,
+      "test_clips": 2953,
+      "class_count": 7,
+      "train_ships_any": 14,
+      "test_ships_any": 25,
+      "raw_near_clips": 3375,
+      "raw_far_clips": 9656
+    },
+    {
+      "level": "b_session_pair_disjoint",
+      "surviving_ships_in_both": 29,
+      "train_clips": 5890,
+      "test_clips": 10235,
+      "class_count": 29,
+      "train_ships_any": 45,
+      "test_ships_any": 57,
+      "raw_near_clips": 17867,
+      "raw_far_clips": 24809
+    },
+    {
+      "level": "c_date_AND_session_disjoint",
+      "surviving_ships_in_both": 7,
+      "train_clips": 385,
+      "test_clips": 988,
+      "class_count": 7,
+      "train_ships_any": 13,
+      "test_ships_any": 25,
+      "raw_near_clips": 1620,
+      "raw_far_clips": 5781
+    }
+  ],
+  "gate_c_ships": 7,
+  "gate_c_mmsis": [
+    "316003289",
+    "316005498",
+    "316015269",
+    "316022038",
+    "316028702",
+    "316033419",
+    "316033814"
+  ]
+}

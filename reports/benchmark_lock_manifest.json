@@ -1,0 +1,178 @@
+{
+  "lock_version": "v1.0",
+  "locked_at_utc": "2026-09-02T15:46:45.450991+00:00",
+  "dataset": "VTUAD",
+  "scientific_roles": {
+    "closed_set_vessel_identification_primary": "session",
+    "unseen_vessel_generalization_primary": "mmsi",
+    "shipnn_leakage_baseline": "random"
+  },
+  "do_not_train_fingerprint_model_yet": true,
+  "missing_files": [],
+  "files": [
+    {
+      "path": "configs/splits.yaml",
+      "sha256": "2acc68ff4a17d8d3a2f927b1adbdc39b4c609bf02cca08e99d6e8bee17998745",
+      "bytes": 3631
+    },
+    {
+      "path": "data/metadata/vtuad_manifest.csv",
+      "sha256": "a02e0c8e7c55662b261ed6f80689f556b9284a251a49a06e5505a1c028659717",
+      "bytes": 34904271
+    },
+    {
+      "path": "data/metadata/vtuad_leakage_report.json",
+      "sha256": "b14f4feb72dd9bbd71a687382f6dc4782aebaf18e44b26ee07ec9c34cad9594d",
+      "bytes": 403
+    },
+    {
+      "path": "data/metadata/data_quality_report.csv",
+      "sha256": "1daf14b4471c65630186310e7f045c9c83c7a4f8ffb4874297ebd3a1994ca94e",
+      "bytes": 52078682
+    },
+    {
+      "path": "reports/split_audit.md",
+      "sha256": "603a63b088c3af8d21edff2a193adf81fbbcc8a926e7698292599b4a88b91ef2",
+      "bytes": 2881
+    },
+    {
+      "path": "reports/split_statistics.csv",
+      "sha256": "4ae208edafe2cf44b80f1ccc414bfc809c0e35c22d85f10567036cc6cec26eee",
+      "bytes": 2045
+    },
+    {
+      "path": "data/processed/splits/random_train.csv",
+      "sha256": "67d310fb72d273f1f496c3217e42d8c3705d06d033281557aab5e5494b130594",
+      "bytes": 35402618
+    },
+    {
+      "path": "data/processed/splits/random_val.csv",
+      "sha256": "d5f4bfc24a7c0f5a8a5242015fdaeb2c2c61498ae445bf7bb4f4d0a6a90fda50",
+      "bytes": 4389360
+    },
+    {
+      "path": "data/processed/splits/random_test.csv",
+      "sha256": "57d1b015e9e12c23557e5edec49bee0435361f8397e86753c579f0b99d3865f4",
+      "bytes": 4408723
+    },
+    {
+      "path": "data/processed/splits/session_train.csv",
+      "sha256": "121ba3f5b63e6aeb4aa9987b91ec320098a6a64adcd70c5d6847a6acee8a1528",
+      "bytes": 36304153
+    },
+    {
+      "path": "data/processed/splits/session_val.csv",
+      "sha256": "74b4e83ecbf6b1edb8ee74f3c9239192c8327da86d53af1ec05828927b98e5c3",
+      "bytes": 4065279
+    },
+    {
+      "path": "data/processed/splits/session_test.csv",
+      "sha256": "135237b9ff92af21531010ff4557411871dfb16db603bd45a7ac8e39a1d8b4cc",
+      "bytes": 4011614
+    },
+    {
+      "path": "data/processed/splits/mmsi_train.csv",
+      "sha256": "c97239e2a06ade47f21ee3cd570ccddd47f3d6be58192f42b0fb4886a977262a",
+      "bytes": 32956324
+    },
+    {
+      "path": "data/processed/splits/mmsi_val.csv",
+      "sha256": "0d3674af4f8acda65d561ce166485f589c9050286f63be03a6c963680c1c8166",
+      "bytes": 4320008
+    },
+    {
+      "path": "data/processed/splits/mmsi_test.csv",
+      "sha256": "d5cdeb7ad96b8dc43c25c046d15205d40d906f449c3a7fc640ee356ee85fdde8",
+      "bytes": 6564217
+    },
+    {
+      "path": "data/processed/splits/temporal_train.csv",
+      "sha256": "73cd6c7f43ecb2f26b2f23cc64ff2cd1803bb083d3b3aa203247c9158a92dfda",
+      "bytes": 34326722
+    },
+    {
+      "path": "data/processed/splits/temporal_val.csv",
+      "sha256": "a6f8d149ae41fcc4357319d50dba949b75a3399d4a636556529ce34d1c1c3091",
+      "bytes": 5898515
+    },
+    {
+      "path": "data/processed/splits/temporal_test.csv",
+      "sha256": "c45f5de0a6610a3cfe736671cb0bed57b2be2ba300f854f9c0ed280d0c10228f",
+      "bytes": 4316091
+    },
+    {
+      "path": "data/processed/splits/scenario_train.csv",
+      "sha256": "6f1fb12c0734fcb1b87f4de619e70a5becf346d2917b8b5accf3242bd0546f33",
+      "bytes": 8908558
+    },
+    {
+      "path": "data/processed/splits/scenario_val.csv",
+      "sha256": "55cd7a7fefbb22296e687be662225b6704edf1af3e5dfdba2ef5fef7238771f0",
+      "bytes": 15924725
+    },
+    {
+      "path": "data/processed/splits/scenario_test.csv",
+      "sha256": "6874edee74084a23d9261829c08c6525ef6b083d209a04eb7c1953634d940ce2",
+      "bytes": 12452335
+    }
+  ],
+  "overlap_verification": {
+    "all_pass": true,
+    "checks": {
+      "mmsi_nonzero_ship_overlap": {
+        "train_val": 0,
+        "train_test": 0,
+        "val_test": 0,
+        "pass": true,
+        "n_ships": {
+          "train": 178,
+          "val": 22,
+          "test": 22
+        }
+      },
+      "session_sub_init_overlap": {
+        "train_val": 0,
+        "train_test": 0,
+        "val_test": 0,
+        "pass": true,
+        "n_sessions": {
+          "train": 3026,
+          "val": 378,
+          "test": 378
+        }
+      },
+      "random_file_path_overlap": {
+        "overlap_total": 0,
+        "pass": true
+      },
+      "session_file_path_overlap": {
+        "overlap_total": 0,
+        "pass": true
+      },
+      "mmsi_file_path_overlap": {
+        "overlap_total": 0,
+        "pass": true
+      },
+      "temporal_file_path_overlap": {
+        "overlap_total": 0,
+        "pass": true
+      },
+      "scenario_file_path_overlap": {
+        "overlap_total": 0,
+        "pass": true
+      },
+      "random_expected_mmsi_leakage": {
+        "train_test_overlap": 221,
+        "pass": true,
+        "note": "Random baseline must leak ships; otherwise comparison is meaningless."
+      }
+    }
+  },
+  "next_milestone": [
+    "E0 ShipNN on random",
+    "E1 ShipNN on session (closed-set primary)",
+    "E2 ShipNN on MMSI (unseen-vessel; interpret carefully)",
+    "Produce accuracy comparison table",
+    "Only then design TinyShip-Fingerprint"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "loss": "arcface",
+  "k_enroll": 5,
+  "n_ships": 22,
+  "eer_prototype": 0.2401,
+  "eer_prototype_asnorm": 0.2434
+}

@@ -1,0 +1,30 @@
+﻿# TinyShip Conda environment
+# Create: conda env create -f environment.yml
+# Or: conda create -n tinyship python=3.11 && pip install -r requirements/requirements.txt
+#
+# CRITICAL for RTX 5070 Ti (sm_120): install PyTorch with CUDA 12.8+ wheels:
+#   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+
+name: tinyship
+channels:
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - torch
+      - torchvision
+      - torchaudio
+      - numpy
+      - scipy
+      - pandas
+      - librosa
+      - soundfile
+      - scikit-learn
+      - matplotlib
+      - tqdm
+      - pyyaml
+      - jupyter
+      - ipykernel
+      - spafe
+      - pytest

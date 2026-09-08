@@ -1,0 +1,18 @@
+# Placeholder only — no training in bootstrap phase.
+# Scientific splits are intentionally NOT defined yet.
+
+seed: 42
+batch_size: 32
+num_workers: 4
+epochs: 0
+optimizer:
+  name: adam
+  lr: 0.001
+loss:
+  name: cross_entropy
+# Do not set train/val/test paths until leakage-aware split study is complete.
+splits:
+  strategy: null
+  train_ratio: null
+  val_ratio: null
+  test_ratio: null

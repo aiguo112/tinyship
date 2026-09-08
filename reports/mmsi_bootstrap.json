@@ -1,0 +1,383 @@
+{
+  "experiment": "mmsi_bootstrap_ci",
+  "n_boot": 2000,
+  "alpha": 0.05,
+  "note": "Independent units = evaluation MMSIs. Each bootstrap resamples 22 vessels with replacement, keeps the unique set, and recomputes EER/top-1. Hierarchical variant first draws an eval-seed pack (0..4), then resamples MMSIs.",
+  "methods": {
+    "subcenter_mean": {
+      "method": "Sub-center + mean",
+      "n_boot": 2000,
+      "per_seed_mmsi_bootstrap": {
+        "0": {
+          "n_boot": 2000,
+          "n_boot_requested": 2000,
+          "alpha": 0.05,
+          "eer_ci95": [
+            0.0245,
+            0.1028
+          ],
+          "top1_ci95": [
+            0.7608,
+            0.9748
+          ],
+          "eer_boot_mean": 0.0656,
+          "top1_boot_mean": 0.8785,
+          "mean_unique_ships": 14.04,
+          "unit": "MMSI (vessel), resampled with replacement then unique"
+        },
+        "1": {
+          "n_boot": 2000,
+          "n_boot_requested": 2000,
+          "alpha": 0.05,
+          "eer_ci95": [
+            0.0198,
+            0.1063
+          ],
+          "top1_ci95": [
+            0.7658,
+            0.9799
+          ],
+          "eer_boot_mean": 0.0625,
+          "top1_boot_mean": 0.8963,
+          "mean_unique_ships": 14.04,
+          "unit": "MMSI (vessel), resampled with replacement then unique"
+        },
+        "2": {
+          "n_boot": 2000,
+          "n_boot_requested": 2000,
+          "alpha": 0.05,
+          "eer_ci95": [
+            0.023,
+            0.0997
+          ],
+          "top1_ci95": [
+            0.7752,
+            0.9745
+          ],
+          "eer_boot_mean": 0.0659,
+          "top1_boot_mean": 0.8777,
+          "mean_unique_ships": 14.13,
+          "unit": "MMSI (vessel), resampled with replacement then unique"
+        },
+        "3": {
+          "n_boot": 2000,
+          "n_boot_requested": 2000,
+          "alpha": 0.05,
+          "eer_ci95": [
+            0.021,
+            0.1245
+          ],
+          "top1_ci95": [
+            0.6887,
+            0.9833
+          ],
+          "eer_boot_mean": 0.0702,
+          "top1_boot_mean": 0.863,
+          "mean_unique_ships": 14.15,
+          "unit": "MMSI (vessel), resampled with replacement then unique"
+        },
+        "4": {
+          "n_boot": 2000,
+          "n_boot_requested": 2000,
+          "alpha": 0.05,
+          "eer_ci95": [
+            0.0239,
+            0.0915
+          ],
+          "top1_ci95": [
+            0.7659,
+            0.9747
+          ],
+          "eer_boot_mean": 0.0582,
+          "top1_boot_mean": 0.8882,
+          "mean_unique_ships": 14.09,
+          "unit": "MMSI (vessel), resampled with replacement then unique"
+        }
+      },
+      "hierarchical_seed_then_mmsi": {
+        "n_boot": 2000,
+        "n_boot_requested": 2000,
+        "alpha": 0.05,
+        "eer_ci95": [
+          0.0223,
+          0.1071
+        ],
+        "top1_ci95": [
+          0.7473,
+          0.9791
+        ],
+        "eer_boot_mean": 0.065,
+        "top1_boot_mean": 0.8794,
+        "unit": "hierarchical: draw eval-seed pack, then resample MMSIs",
+        "n_packs": 5
+      },
+      "primary_ci": {
+        "n_boot": 2000,
+        "n_boot_requested": 2000,
+        "alpha": 0.05,
+        "eer_ci95": [
+          0.0223,
+          0.1071
+        ],
+        "top1_ci95": [
+          0.7473,
+          0.9791
+        ],
+        "eer_boot_mean": 0.065,
+        "top1_boot_mean": 0.8794,
+        "unit": "hierarchical: draw eval-seed pack, then resample MMSIs",
+        "n_packs": 5
+      }
+    },
+    "subcenter_stats_pool": {
+      "method": "Sub-center + stats-pool (ours)",
+      "n_boot": 2000,
+      "per_seed_mmsi_bootstrap": {
+        "0": {
+          "n_boot": 2000,
+          "n_boot_requested": 2000,
+          "alpha": 0.05,
+          "eer_ci95": [
+            0.0319,
+            0.0829
+          ],
+          "top1_ci95": [
+            0.8811,
+            0.9791
+          ],
+          "eer_boot_mean": 0.0596,
+          "top1_boot_mean": 0.9323,
+          "mean_unique_ships": 14.04,
+          "unit": "MMSI (vessel), resampled with replacement then unique"
+        },
+        "1": {
+          "n_boot": 2000,
+          "n_boot_requested": 2000,
+          "alpha": 0.05,
+          "eer_ci95": [
+            0.0385,
+            0.0854
+          ],
+          "top1_ci95": [
+            0.9036,
+            0.9871
+          ],
+          "eer_boot_mean": 0.064,
+          "top1_boot_mean": 0.9546,
+          "mean_unique_ships": 14.04,
+          "unit": "MMSI (vessel), resampled with replacement then unique"
+        },
+        "2": {
+          "n_boot": 2000,
+          "n_boot_requested": 2000,
+          "alpha": 0.05,
+          "eer_ci95": [
+            0.0345,
+            0.076
+          ],
+          "top1_ci95": [
+            0.8986,
+            0.9827
+          ],
+          "eer_boot_mean": 0.0585,
+          "top1_boot_mean": 0.9419,
+          "mean_unique_ships": 14.13,
+          "unit": "MMSI (vessel), resampled with replacement then unique"
+        },
+        "3": {
+          "n_boot": 2000,
+          "n_boot_requested": 2000,
+          "alpha": 0.05,
+          "eer_ci95": [
+            0.0349,
+            0.0958
+          ],
+          "top1_ci95": [
+            0.8237,
+            0.9873
+          ],
+          "eer_boot_mean": 0.0638,
+          "top1_boot_mean": 0.9262,
+          "mean_unique_ships": 14.15,
+          "unit": "MMSI (vessel), resampled with replacement then unique"
+        },
+        "4": {
+          "n_boot": 2000,
+          "n_boot_requested": 2000,
+          "alpha": 0.05,
+          "eer_ci95": [
+            0.0371,
+            0.0783
+          ],
+          "top1_ci95": [
+            0.8562,
+            0.9825
+          ],
+          "eer_boot_mean": 0.0563,
+          "top1_boot_mean": 0.9346,
+          "mean_unique_ships": 14.09,
+          "unit": "MMSI (vessel), resampled with replacement then unique"
+        }
+      },
+      "hierarchical_seed_then_mmsi": {
+        "n_boot": 2000,
+        "n_boot_requested": 2000,
+        "alpha": 0.05,
+        "eer_ci95": [
+          0.035,
+          0.0861
+        ],
+        "top1_ci95": [
+          0.8584,
+          0.9847
+        ],
+        "eer_boot_mean": 0.0607,
+        "top1_boot_mean": 0.9374,
+        "unit": "hierarchical: draw eval-seed pack, then resample MMSIs",
+        "n_packs": 5
+      },
+      "primary_ci": {
+        "n_boot": 2000,
+        "n_boot_requested": 2000,
+        "alpha": 0.05,
+        "eer_ci95": [
+          0.035,
+          0.0861
+        ],
+        "top1_ci95": [
+          0.8584,
+          0.9847
+        ],
+        "eer_boot_mean": 0.0607,
+        "top1_boot_mean": 0.9374,
+        "unit": "hierarchical: draw eval-seed pack, then resample MMSIs",
+        "n_packs": 5
+      }
+    },
+    "ecapa_stats_pool": {
+      "method": "ECAPA stats-pool",
+      "n_boot": 2000,
+      "per_seed_mmsi_bootstrap": {
+        "0": {
+          "n_boot": 2000,
+          "n_boot_requested": 2000,
+          "alpha": 0.05,
+          "eer_ci95": [
+            0.0527,
+            0.1636
+          ],
+          "top1_ci95": [
+            0.6863,
+            0.9476
+          ],
+          "eer_boot_mean": 0.1107,
+          "top1_boot_mean": 0.8176,
+          "mean_unique_ships": 14.04,
+          "unit": "MMSI (vessel), resampled with replacement then unique"
+        },
+        "1": {
+          "n_boot": 2000,
+          "n_boot_requested": 2000,
+          "alpha": 0.05,
+          "eer_ci95": [
+            0.0424,
+            0.1347
+          ],
+          "top1_ci95": [
+            0.7203,
+            0.9595
+          ],
+          "eer_boot_mean": 0.093,
+          "top1_boot_mean": 0.8597,
+          "mean_unique_ships": 14.04,
+          "unit": "MMSI (vessel), resampled with replacement then unique"
+        },
+        "2": {
+          "n_boot": 2000,
+          "n_boot_requested": 2000,
+          "alpha": 0.05,
+          "eer_ci95": [
+            0.048,
+            0.126
+          ],
+          "top1_ci95": [
+            0.7618,
+            0.9568
+          ],
+          "eer_boot_mean": 0.0935,
+          "top1_boot_mean": 0.8598,
+          "mean_unique_ships": 14.13,
+          "unit": "MMSI (vessel), resampled with replacement then unique"
+        },
+        "3": {
+          "n_boot": 2000,
+          "n_boot_requested": 2000,
+          "alpha": 0.05,
+          "eer_ci95": [
+            0.0392,
+            0.119
+          ],
+          "top1_ci95": [
+            0.7672,
+            0.9644
+          ],
+          "eer_boot_mean": 0.0897,
+          "top1_boot_mean": 0.8687,
+          "mean_unique_ships": 14.15,
+          "unit": "MMSI (vessel), resampled with replacement then unique"
+        },
+        "4": {
+          "n_boot": 2000,
+          "n_boot_requested": 2000,
+          "alpha": 0.05,
+          "eer_ci95": [
+            0.0483,
+            0.1268
+          ],
+          "top1_ci95": [
+            0.7535,
+            0.9602
+          ],
+          "eer_boot_mean": 0.0936,
+          "top1_boot_mean": 0.8571,
+          "mean_unique_ships": 14.09,
+          "unit": "MMSI (vessel), resampled with replacement then unique"
+        }
+      },
+      "hierarchical_seed_then_mmsi": {
+        "n_boot": 2000,
+        "n_boot_requested": 2000,
+        "alpha": 0.05,
+        "eer_ci95": [
+          0.0459,
+          0.1477
+        ],
+        "top1_ci95": [
+          0.7155,
+          0.9565
+        ],
+        "eer_boot_mean": 0.0969,
+        "top1_boot_mean": 0.8506,
+        "unit": "hierarchical: draw eval-seed pack, then resample MMSIs",
+        "n_packs": 5
+      },
+      "primary_ci": {
+        "n_boot": 2000,
+        "n_boot_requested": 2000,
+        "alpha": 0.05,
+        "eer_ci95": [
+          0.0459,
+          0.1477
+        ],
+        "top1_ci95": [
+          0.7155,
+          0.9565
+        ],
+        "eer_boot_mean": 0.0969,
+        "top1_boot_mean": 0.8506,
+        "unit": "hierarchical: draw eval-seed pack, then resample MMSIs",
+        "n_packs": 5
+      }
+    }
+  }
+}

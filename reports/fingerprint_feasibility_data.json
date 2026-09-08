@@ -1,0 +1,107 @@
+{
+  "protocol": "mmsi",
+  "lock": "BENCHMARK_LOCK v1.0",
+  "seed_note": "from data/processed/splits/mmsi_*.csv (configs seed 42)",
+  "overlap": {
+    "train_val": 0,
+    "train_test": 0,
+    "val_test": 0
+  },
+  "split_sizes": [
+    {
+      "split": "train",
+      "real_ships": 178,
+      "real_clips": 101368,
+      "bg_clips": 31126,
+      "total_clips": 132494,
+      "mmsi_values_incl_0": 179
+    },
+    {
+      "split": "val",
+      "real_ships": 22,
+      "real_clips": 13649,
+      "bg_clips": 3891,
+      "total_clips": 17540,
+      "mmsi_values_incl_0": 23
+    },
+    {
+      "split": "test",
+      "real_ships": 22,
+      "real_clips": 22040,
+      "bg_clips": 3891,
+      "total_clips": 25931,
+      "mmsi_values_incl_0": 23
+    }
+  ],
+  "test": {
+    "n_ships": 22,
+    "n_ge2_sessions": 22,
+    "gate_ge2_sessions_ge20_clips": 22,
+    "ge2_sessions_ge50_clips": 22,
+    "clip_quartiles": {
+      "0.0": 56.0,
+      "0.25": 103.5,
+      "0.5": 180.0,
+      "0.75": 289.25,
+      "1.0": 10754.0
+    },
+    "session_hist": {
+      "56": 1,
+      "68": 1,
+      "91": 2,
+      "99": 1,
+      "103": 1,
+      "105": 1,
+      "119": 1,
+      "120": 1,
+      "164": 1,
+      "169": 1,
+      "191": 1,
+      "209": 1,
+      "210": 1,
+      "223": 1,
+      "260": 1,
+      "261": 1,
+      "295": 1,
+      "410": 1,
+      "629": 1,
+      "1048": 1,
+      "1093": 1
+    }
+  },
+  "background": {
+    "total_clips": 38908,
+    "by_split": {
+      "train": 31126,
+      "val": 3891,
+      "test": 3891
+    },
+    "mmsi_values": [
+      0
+    ]
+  },
+  "gate_mmsis": [
+    241459000,
+    249409000,
+    257854000,
+    311536000,
+    316001245,
+    316003289,
+    316006101,
+    354642000,
+    356006000,
+    357654000,
+    366685570,
+    372901000,
+    373397000,
+    373403000,
+    373634000,
+    477950200,
+    538004811,
+    538006456,
+    563324000,
+    563385000,
+    565500000,
+    566572000
+  ]
+}

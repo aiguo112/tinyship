@@ -1,0 +1,118 @@
+# Scientific roles for VTUAD split protocols.
+# DO NOT train models from this file alone.
+# Locked after split audit — see reports/BENCHMARK_LOCK.md
+
+dataset: VTUAD
+raw_root: data/raw/vtuad
+output_dir: data/processed/splits
+reports_dir: reports
+quality_report: data/metadata/data_quality_report.csv
+seed: 42
+
+# Freeze status (set by scripts/verify/freeze_benchmark.py)
+freeze:
+  locked: true
+  lock_version: "v1.0"
+  note: "Do not regenerate splits without bumping lock_version and re-auditing."
+
+ratios:
+  train: 0.8
+  val: 0.1
+  test: 0.1
+
+background:
+  mmsi_values: [0]
+  assignment: random_clip
+
+# Scientific protocol roles (adjusted post-audit)
+scientific_roles:
+  closed_set_vessel_identification:
+    primary: session
+    rationale: >
+      Same ship may appear in train and test via different sessions/days
+      (realistic re-identification). Session-disjoint blocks neighboring-clip
+      leakage while remaining closed-set over ship identities.
+  unseen_vessel_generalization:
+    primary: mmsi
+    rationale: >
+      Nonzero MMSI in exactly one split. Softmax closed-set classification
+      of unseen ships is ill-posed; use for representation / enrollment /
+      retrieval fingerprinting experiments — not ordinary class ID.
+  shipnn_baseline_comparison:
+    primary: random
+    secondary: official
+    rationale: Reproduce ShipNN-style clip split to expose leakage inflation.
+  temporal_generalization:
+    primary: temporal
+  distance_domain_robustness:
+    primary: scenario
+
+protocols:
+  random:
+    description: "ShipNN-style random 80/10/10 clip split (BASELINE ONLY — not leakage-free)"
+    group_column: null
+    unit: clip
+    ratios: {train: 0.8, val: 0.1, test: 0.1}
+    role: shipnn_baseline
+
+  mmsi:
+    description: "Ship-independent split — nonzero MMSI in exactly one split"
+    group_column: MMSI
+    unit: ship
+    ratios: {train: 0.8, val: 0.1, test: 0.1}
+    exclude_mmsi: [0]
+    background_assignment: random_clip
+    role: unseen_vessel_generalization_primary
+
+  session:
+    description: "Session-group split using sub_init (closed-set vessel ID primary)"
+    group_column: sub_init
+    unit: session
+    ratios: {train: 0.8, val: 0.1, test: 0.1}
+    balance_ships: true
+    role: closed_set_vessel_identification_primary
+
+  temporal:
+    description: Chronological split by recording date (no date shuffle)
+    group_column: date
+    unit: date
+    date_boundaries:
+      train_start: 20170624
+      train_end: 20171006
+      val_start: 20171007
+      val_end: 20171019
+      test_start: 20171020
+      test_end: 20171103
+      n_train_dates: 103
+      n_val_dates: 13
+      n_test_dates: 13
+    role: temporal_generalization
+
+  scenario:
+    description: "Cross-distance scenario protocol (near → mid → far)"
+    train_scenario: inclusion_2000_exclusion_4000
+    val_scenario: inclusion_3000_exclusion_5000
+    test_scenario: inclusion_4000_exclusion_6000
+    dedupe_by_sha256: true
+    role: distance_domain_robustness
+
+experiments:
+  E0:
+    split: random
+    purpose: Reproduce ShipNN reported setting / leakage baseline
+  E1:
+    split: session
+    purpose: Closed-set vessel ID without session leakage
+  E2:
+    split: mmsi
+    purpose: Unseen-vessel generalization (representation / later fingerprinting)
+  E3:
+    split: temporal
+    purpose: Future-date generalization
+  E4:
+    split: scenario
+    purpose: Distance / domain robustness
+  E5:
+    split: cross_dataset
+    purpose: VTUAD → DeepShip / QiandaoEar22 (not frozen yet)
+    status: planned

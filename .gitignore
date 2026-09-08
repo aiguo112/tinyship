@@ -1,0 +1,84 @@
+# ---------------------------------------------------------------------------
+# TinyShip-Fingerprint — GitHub publish set
+# Paper sources stay local. Datasets and weights stay local.
+# ---------------------------------------------------------------------------
+
+# Paper (LaTeX, PDFs, author figures) — not part of the code release
+paper/
+
+# Datasets / audio (do not upload)
+data/raw/**
+!data/raw/**/.gitkeep
+data/interim/**
+!data/interim/**/.gitkeep
+data/processed/**
+!data/processed/**/.gitkeep
+data/metadata/*.csv
+data/metadata/*.json
+!data/metadata/.gitkeep
+*.wav
+*.flac
+*.mp3
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
+
+# Model weights, caches, embeddings
+*.pkl
+*.pt
+*.pth
+*.ckpt
+*.npz
+*.npy
+
+# Run artifacts
+checkpoints/**
+!checkpoints/.gitkeep
+logs/**
+!logs/.gitkeep
+experiments/**
+!experiments/.gitkeep
+
+# Markdown — GitHub ships the root README.md only
+*.md
+!/README.md
+
+# Bulky report artifacts (JSON results are kept)
+reports/**/*.log
+reports/seed_runs/*.csv
+reports/*_subset.csv
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+*.so
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+notebooks/.virtual_documents/
+
+# IDE / OS / editor
+.idea/
+.vscode/
+.cursor/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Env / secrets
+.env
+.env.*
+*.token
+*.key
+ONC_TOKEN
+

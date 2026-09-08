@@ -1,0 +1,135 @@
+{
+  "protocol": {
+    "k_enroll": 20,
+    "probe_w": 3,
+    "seed": 0,
+    "note": "All set-level rows use certified enroll/probe split; clip-cosine and probe_w=1 / AS-norm are labeled backend variants."
+  },
+  "rows": [
+    {
+      "method": "Closed-set (ShipNN-style softmax)",
+      "eer": null,
+      "top1": null,
+      "note": "undefined on unseen vessels",
+      "status": "undefined"
+    },
+    {
+      "method": "ArcFace + clip cosine",
+      "eer": 0.3727,
+      "top1": 0.9383,
+      "note": "clip-level backend (inherent)",
+      "status": "ok",
+      "detail": {
+        "eer": 0.3727,
+        "top1": 0.9383,
+        "n_ships": 22,
+        "n_probe": 11026,
+        "protocol": "clip_cosine",
+        "disjointness_pass": true
+      }
+    },
+    {
+      "method": "ArcFace + prototype enroll ($k{=}20$, single-clip probe)",
+      "eer": 0.1937,
+      "top1": 0.4999,
+      "note": "backend: mean proto; probe_w=1",
+      "status": "ok",
+      "detail": {
+        "eer": 0.1937,
+        "top1": 0.4999,
+        "n_ships": 22,
+        "n_probe": 21600,
+        "k_enroll": 20,
+        "probe_w": 1,
+        "disjointness_pass": true,
+        "protocol": "prototype_single_probe"
+      }
+    },
+    {
+      "method": "ArcFace + prototype + AS-norm ($k{=}20$, $w{=}3$)",
+      "eer": 0.0805,
+      "top1": 0.7478,
+      "note": "backend: AS-norm only change",
+      "status": "ok",
+      "detail": {
+        "eer": 0.0805,
+        "top1": 0.7478,
+        "n_ships": 22,
+        "n_probe": 7194,
+        "k_enroll": 20,
+        "probe_w": 3,
+        "protocol": "certified_mean_asnorm",
+        "disjointness_pass": true
+      }
+    },
+    {
+      "method": "ArcFace + temporal mean pooling ($k{=}20$, $w{=}3$)",
+      "eer": 0.096,
+      "top1": 0.7478,
+      "note": "certified mean protocol on ArcFace emb",
+      "status": "ok",
+      "detail": {
+        "eer": 0.096,
+        "top1": 0.7478,
+        "n_ships": 22,
+        "n_probe": 7194,
+        "k_enroll": 20,
+        "probe_w": 3,
+        "disjointness_pass": true,
+        "protocol": "certified_mean"
+      }
+    },
+    {
+      "method": "Sub-center ArcFace + attention set pooling",
+      "eer": 0.0765,
+      "top1": 0.8228,
+      "note": "attention pool; same split",
+      "status": "ok",
+      "detail": {
+        "eer": 0.0765,
+        "top1": 0.8228,
+        "n_ships": 22,
+        "n_probe": 7194,
+        "k_enroll": 20,
+        "probe_w": 3,
+        "protocol": "attention_set_disjoint",
+        "disjointness_pass": true
+      }
+    },
+    {
+      "method": "Triplet + temporal mean pooling ($k{=}20$, $w{=}3$)",
+      "eer": 0.4963,
+      "top1": 0.0881,
+      "note": "same encoder/protocol",
+      "status": "ok",
+      "detail": {
+        "eer": 0.4963,
+        "top1": 0.0881,
+        "n_ships": 22,
+        "n_probe": 7194,
+        "k_enroll": 20,
+        "probe_w": 3,
+        "disjointness_pass": true,
+        "protocol": "certified_mean"
+      }
+    },
+    {
+      "method": "\\textbf{Sub-center ArcFace + mean set pooling (ours)}",
+      "eer": 0.0714,
+      "top1": 0.8325,
+      "note": "certified; matches certify_attention_eer",
+      "status": "ok",
+      "detail": {
+        "eer": 0.0714,
+        "top1": 0.8325,
+        "n_ships": 22,
+        "n_probe": 7194,
+        "k_enroll": 20,
+        "probe_w": 3,
+        "disjointness_pass": true,
+        "protocol": "certified_mean"
+      },
+      "ours": true
+    }
+  ]
+}

@@ -1,0 +1,335 @@
+{
+  "experiment": "E3_OSCR",
+  "protocol": {
+    "k_enroll": 20,
+    "probe_w_known": 3,
+    "probe_w_unknown": 3,
+    "unknown_note": "BG embeddings from the same npz (3891 test background clips). Unknowns use the same pool_fn and probe_w=3 as knowns: clips are shuffled per eval seed and chunked into 1297 non-overlapping windows (remainder dropped). This avoids singleton stats-pool expansion (std\u2248eps), which previously collapsed CCR@0.1 and OSCR-AUC to closed-set top-1.",
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "n_ships": 22,
+    "n_probe_known": 7194,
+    "n_bg": 3891,
+    "n_unk": 1297,
+    "score": "score_max = max(P @ v); correct = (argmax == true ship)",
+    "metric": "src.evaluation.enrollment.oscr \u2192 ccr@fpr0.1, oscr_auc"
+  },
+  "methods": {
+    "subcenter_mean": {
+      "method": "Sub-center + mean",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "ccr@fpr0.1_per_seed": [
+        0.4836,
+        0.5238,
+        0.4992,
+        0.5468,
+        0.5954
+      ],
+      "oscr_auc_per_seed": [
+        0.6937,
+        0.7261,
+        0.7013,
+        0.712,
+        0.7538
+      ],
+      "ccr@fpr0.1_mean": 0.5298,
+      "ccr@fpr0.1_std": 0.0439,
+      "oscr_auc_mean": 0.7174,
+      "oscr_auc_std": 0.0237,
+      "n_ships": 22,
+      "n_probe": 7194,
+      "n_bg": 3891,
+      "n_unk": 1297,
+      "clip_disjoint": "PASS",
+      "per_seed": [
+        {
+          "seed": 0,
+          "ccr@fpr0.1": 0.4836,
+          "oscr_auc": 0.6937,
+          "n_ships": 22,
+          "n_probe": 7194,
+          "n_bg": 3891,
+          "n_unk": 1297,
+          "clip_disjoint": "PASS"
+        },
+        {
+          "seed": 1,
+          "ccr@fpr0.1": 0.5238,
+          "oscr_auc": 0.7261,
+          "n_ships": 22,
+          "n_probe": 7194,
+          "n_bg": 3891,
+          "n_unk": 1297,
+          "clip_disjoint": "PASS"
+        },
+        {
+          "seed": 2,
+          "ccr@fpr0.1": 0.4992,
+          "oscr_auc": 0.7013,
+          "n_ships": 22,
+          "n_probe": 7194,
+          "n_bg": 3891,
+          "n_unk": 1297,
+          "clip_disjoint": "PASS"
+        },
+        {
+          "seed": 3,
+          "ccr@fpr0.1": 0.5468,
+          "oscr_auc": 0.712,
+          "n_ships": 22,
+          "n_probe": 7194,
+          "n_bg": 3891,
+          "n_unk": 1297,
+          "clip_disjoint": "PASS"
+        },
+        {
+          "seed": 4,
+          "ccr@fpr0.1": 0.5954,
+          "oscr_auc": 0.7538,
+          "n_ships": 22,
+          "n_probe": 7194,
+          "n_bg": 3891,
+          "n_unk": 1297,
+          "clip_disjoint": "PASS"
+        }
+      ],
+      "embeddings": "fingerprint_attention_embeddings.npz"
+    },
+    "subcenter_stats_pool": {
+      "method": "Sub-center + stats-pool (ours)",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "ccr@fpr0.1_per_seed": [
+        0.6084,
+        0.5591,
+        0.5609,
+        0.6441,
+        0.614
+      ],
+      "oscr_auc_per_seed": [
+        0.791,
+        0.7908,
+        0.7803,
+        0.7987,
+        0.8072
+      ],
+      "ccr@fpr0.1_mean": 0.5973,
+      "ccr@fpr0.1_std": 0.0367,
+      "oscr_auc_mean": 0.7936,
+      "oscr_auc_std": 0.01,
+      "n_ships": 22,
+      "n_probe": 7194,
+      "n_bg": 3891,
+      "n_unk": 1297,
+      "clip_disjoint": "PASS",
+      "per_seed": [
+        {
+          "seed": 0,
+          "ccr@fpr0.1": 0.6084,
+          "oscr_auc": 0.791,
+          "n_ships": 22,
+          "n_probe": 7194,
+          "n_bg": 3891,
+          "n_unk": 1297,
+          "clip_disjoint": "PASS"
+        },
+        {
+          "seed": 1,
+          "ccr@fpr0.1": 0.5591,
+          "oscr_auc": 0.7908,
+          "n_ships": 22,
+          "n_probe": 7194,
+          "n_bg": 3891,
+          "n_unk": 1297,
+          "clip_disjoint": "PASS"
+        },
+        {
+          "seed": 2,
+          "ccr@fpr0.1": 0.5609,
+          "oscr_auc": 0.7803,
+          "n_ships": 22,
+          "n_probe": 7194,
+          "n_bg": 3891,
+          "n_unk": 1297,
+          "clip_disjoint": "PASS"
+        },
+        {
+          "seed": 3,
+          "ccr@fpr0.1": 0.6441,
+          "oscr_auc": 0.7987,
+          "n_ships": 22,
+          "n_probe": 7194,
+          "n_bg": 3891,
+          "n_unk": 1297,
+          "clip_disjoint": "PASS"
+        },
+        {
+          "seed": 4,
+          "ccr@fpr0.1": 0.614,
+          "oscr_auc": 0.8072,
+          "n_ships": 22,
+          "n_probe": 7194,
+          "n_bg": 3891,
+          "n_unk": 1297,
+          "clip_disjoint": "PASS"
+        }
+      ],
+      "embeddings": "fingerprint_attention_embeddings.npz"
+    },
+    "ecapa_stats_pool": {
+      "method": "ECAPA stats-pool",
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "ccr@fpr0.1_per_seed": [
+        0.2173,
+        0.258,
+        0.2032,
+        0.2581,
+        0.2694
+      ],
+      "oscr_auc_per_seed": [
+        0.5257,
+        0.5691,
+        0.5213,
+        0.5616,
+        0.5696
+      ],
+      "ccr@fpr0.1_mean": 0.2412,
+      "ccr@fpr0.1_std": 0.0291,
+      "oscr_auc_mean": 0.5495,
+      "oscr_auc_std": 0.024,
+      "n_ships": 22,
+      "n_probe": 7194,
+      "n_bg": 3891,
+      "n_unk": 1297,
+      "clip_disjoint": "PASS",
+      "per_seed": [
+        {
+          "seed": 0,
+          "ccr@fpr0.1": 0.2173,
+          "oscr_auc": 0.5257,
+          "n_ships": 22,
+          "n_probe": 7194,
+          "n_bg": 3891,
+          "n_unk": 1297,
+          "clip_disjoint": "PASS"
+        },
+        {
+          "seed": 1,
+          "ccr@fpr0.1": 0.258,
+          "oscr_auc": 0.5691,
+          "n_ships": 22,
+          "n_probe": 7194,
+          "n_bg": 3891,
+          "n_unk": 1297,
+          "clip_disjoint": "PASS"
+        },
+        {
+          "seed": 2,
+          "ccr@fpr0.1": 0.2032,
+          "oscr_auc": 0.5213,
+          "n_ships": 22,
+          "n_probe": 7194,
+          "n_bg": 3891,
+          "n_unk": 1297,
+          "clip_disjoint": "PASS"
+        },
+        {
+          "seed": 3,
+          "ccr@fpr0.1": 0.2581,
+          "oscr_auc": 0.5616,
+          "n_ships": 22,
+          "n_probe": 7194,
+          "n_bg": 3891,
+          "n_unk": 1297,
+          "clip_disjoint": "PASS"
+        },
+        {
+          "seed": 4,
+          "ccr@fpr0.1": 0.2694,
+          "oscr_auc": 0.5696,
+          "n_ships": 22,
+          "n_probe": 7194,
+          "n_bg": 3891,
+          "n_unk": 1297,
+          "clip_disjoint": "PASS"
+        }
+      ],
+      "embeddings": "e2_ecapa_embeddings.npz",
+      "frontend_note": "ECAPA-TDNN native 16 kHz fbank + AAM; pipeline-level comparison."
+    }
+  },
+  "asnorm": {
+    "status": "SKIPPED",
+    "note": "optional AS-norm OSCR skipped (score calibration complicates max-sim OSCR)"
+  },
+  "e1a": {
+    "status": "SKIPPED_STRUCTURALLY_INFEASIBLE",
+    "n_surviving_test_vessels": 2,
+    "secondary_n2": {
+      "status": "COMPUTED_SECONDARY_ONLY",
+      "label": "secondary_n2_noncomparable",
+      "mmsis": [
+        "316001245",
+        "316003289"
+      ],
+      "counts_1s_clips": {
+        "316001245": 10754,
+        "316003289": 6948
+      },
+      "k_enroll": 20,
+      "probe_w": 3,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "subcenter_mean": {
+        "eers": [
+          0.1053,
+          0.1038,
+          0.0683,
+          0.0965,
+          0.0668
+        ],
+        "eer_mean": 0.0881,
+        "eer_std": 0.0191
+      },
+      "subcenter_stats_pool": {
+        "eers": [
+          0.1396,
+          0.1274,
+          0.1057,
+          0.153,
+          0.1167
+        ],
+        "eer_mean": 0.1285,
+        "eer_std": 0.0186
+      },
+      "note": "NOT Table I / NOT true E1a. Uses 1s-clip embeddings filtered to the 2 vessels that survive the same-session multi-clip E1a gate. Comparable 22-vessel E1a remains SKIPPED_STRUCTURALLY_INFEASIBLE."
+    }
+  }
+}

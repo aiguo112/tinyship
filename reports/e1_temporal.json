@@ -1,0 +1,488 @@
+{
+  "experiment": "E1",
+  "protocol": {
+    "k_enroll": 20,
+    "probe_w": 3,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "n_probe_ref": 7194,
+    "n_ships_ref": 22
+  },
+  "baseline_stats_pool": {
+    "mean_eer": 0.0629,
+    "std_eer": 0.0043,
+    "eers": [
+      0.0627,
+      0.0675,
+      0.0605,
+      0.0667,
+      0.0571
+    ],
+    "top1_seed0": 0.8999,
+    "source": "E1c parameter-free mean+std on fingerprint_attention_embeddings.npz",
+    "note": "User-selected baseline for E1b comparison (replaces mean 0.0698 for subsequent gates)"
+  },
+  "baseline_subcenter_mean": {
+    "mean": 0.0698,
+    "std": 0.0057,
+    "eers": [
+      0.0714,
+      0.0686,
+      0.0699,
+      0.0775,
+      0.0617
+    ],
+    "source": "recomputed"
+  },
+  "e1a": {
+    "status": "SKIPPED_STRUCTURALLY_INFEASIBLE",
+    "rule": "Concatenate consecutive same-(vessel,session) 1s clips ONLY; never cross session boundaries",
+    "surviving_test_vessels": {
+      "win_3s": {
+        "n": 2,
+        "mmsis": [
+          "316001245",
+          "316003289"
+        ],
+        "windows": [
+          8675,
+          4952
+        ]
+      },
+      "win_5s": {
+        "n": 2,
+        "mmsis": [
+          "316001245",
+          "316003289"
+        ],
+        "windows": [
+          6867,
+          3306
+        ]
+      }
+    },
+    "surviving_train_vessels": {
+      "win_3s": 19,
+      "win_5s": 11
+    },
+    "limitation": "Only 2/22 test vessels have any same-session multi-clip window usable under k_enroll=20, probe_w=3. N=2 is underpowered and not protocol-identical to the 22-vessel certified table. Recorded as a limitation; no E1a EER emitted as a comparable row.",
+    "decision": "Skip E1a; proceed to E1b",
+    "secondary_n2": {
+      "status": "COMPUTED_SECONDARY_ONLY",
+      "label": "secondary_n2_noncomparable",
+      "mmsis": [
+        "316001245",
+        "316003289"
+      ],
+      "counts_1s_clips": {
+        "316001245": 10754,
+        "316003289": 6948
+      },
+      "k_enroll": 20,
+      "probe_w": 3,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "subcenter_mean": {
+        "eers": [
+          0.1053,
+          0.1038,
+          0.0683,
+          0.0965,
+          0.0668
+        ],
+        "eer_mean": 0.0881,
+        "eer_std": 0.0191
+      },
+      "subcenter_stats_pool": {
+        "eers": [
+          0.1396,
+          0.1274,
+          0.1057,
+          0.153,
+          0.1167
+        ],
+        "eer_mean": 0.1285,
+        "eer_std": 0.0186
+      },
+      "note": "NOT Table I / NOT true E1a. Uses 1s-clip embeddings filtered to the 2 vessels that survive the same-session multi-clip E1a gate. Comparable 22-vessel E1a remains SKIPPED_STRUCTURALLY_INFEASIBLE."
+    },
+    "comparable_22vessel_eer": null
+  },
+  "e1c_stats_pool": {
+    "mean": 0.0629,
+    "std": 0.0043,
+    "eers": [
+      0.0627,
+      0.0675,
+      0.0605,
+      0.0667,
+      0.0571
+    ],
+    "top1_seed0": 0.8999,
+    "dim": 256,
+    "trained": false
+  },
+  "e1c_asp": {
+    "mean": 0.0825,
+    "std": 0.0034,
+    "eers": [
+      0.079,
+      0.0845,
+      0.0838,
+      0.0863,
+      0.0787
+    ],
+    "top1_seed0": 0.8143,
+    "dim": 128,
+    "trained": true,
+    "note": "train-closed-set ASP; worse than mean/stats"
+  },
+  "e1b": {
+    "baseline": "e1c_stats_pool 0.0629\u00b10.0043",
+    "n_ships": 22,
+    "n_probe": 7194,
+    "variants": {
+      "gru_frozen": {
+        "eer_mean": 0.1261,
+        "eer_std": 0.0067,
+        "eers": [
+          0.1339,
+          0.1301,
+          0.1168,
+          0.1223,
+          0.1274
+        ],
+        "top1_mean": 0.6612,
+        "top1_std": 0.0406,
+        "top1s": [
+          0.6229,
+          0.6125,
+          0.6954,
+          0.6779,
+          0.6975
+        ],
+        "n_ships": 22,
+        "n_probe": 7194,
+        "clip_disjoint": "PASS",
+        "session_disjoint_seed0": "FAIL_SESSION (overlap_ships=7, probe_frac=0.0581)",
+        "session_disjoint_seeds": [
+          "FAIL_SESSION",
+          "FAIL_SESSION",
+          "FAIL_SESSION",
+          "FAIL_SESSION",
+          "FAIL_SESSION"
+        ],
+        "mode": "frozen",
+        "agg": "gru",
+        "config": {
+          "agg": "gru",
+          "mode": "frozen",
+          "epochs": 40,
+          "K": 3,
+          "set_w": 5,
+          "margin": 0.2,
+          "scale": 16.0,
+          "lr": 0.001,
+          "bs": 32,
+          "steps_per_epoch": 400,
+          "emb_dim": 128,
+          "encoder_frozen": true,
+          "encoder_ckpt": "reports/fingerprint_attention_ckpt.pt",
+          "feature": "cqt_mfcc",
+          "width": 0.25
+        }
+      },
+      "tcn_frozen": {
+        "eer_mean": 0.1974,
+        "eer_std": 0.0286,
+        "eers": [
+          0.2331,
+          0.1752,
+          0.1685,
+          0.2217,
+          0.1886
+        ],
+        "top1_mean": 0.491,
+        "top1_std": 0.0371,
+        "top1s": [
+          0.4758,
+          0.4551,
+          0.5532,
+          0.4801,
+          0.4908
+        ],
+        "n_ships": 22,
+        "n_probe": 7194,
+        "clip_disjoint": "PASS",
+        "session_disjoint_seed0": "FAIL_SESSION (overlap_ships=7, probe_frac=0.0581)",
+        "session_disjoint_seeds": [
+          "FAIL_SESSION",
+          "FAIL_SESSION",
+          "FAIL_SESSION",
+          "FAIL_SESSION",
+          "FAIL_SESSION"
+        ],
+        "mode": "frozen",
+        "agg": "tcn",
+        "config": {
+          "agg": "tcn",
+          "mode": "frozen",
+          "epochs": 40,
+          "K": 3,
+          "set_w": 5,
+          "margin": 0.2,
+          "scale": 16.0,
+          "lr": 0.001,
+          "bs": 32,
+          "steps_per_epoch": 400,
+          "emb_dim": 128,
+          "encoder_frozen": true,
+          "encoder_ckpt": "reports/fingerprint_attention_ckpt.pt",
+          "feature": "cqt_mfcc",
+          "width": 0.25
+        }
+      },
+      "mha_frozen": {
+        "eer_mean": 0.0806,
+        "eer_std": 0.005,
+        "eers": [
+          0.0802,
+          0.0771,
+          0.0841,
+          0.087,
+          0.0746
+        ],
+        "top1_mean": 0.7994,
+        "top1_std": 0.0166,
+        "top1s": [
+          0.8,
+          0.795,
+          0.7998,
+          0.7779,
+          0.8244
+        ],
+        "n_ships": 22,
+        "n_probe": 7194,
+        "clip_disjoint": "PASS",
+        "session_disjoint_seed0": "FAIL_SESSION (overlap_ships=7, probe_frac=0.0581)",
+        "session_disjoint_seeds": [
+          "FAIL_SESSION",
+          "FAIL_SESSION",
+          "FAIL_SESSION",
+          "FAIL_SESSION",
+          "FAIL_SESSION"
+        ],
+        "mode": "frozen",
+        "agg": "mha",
+        "config": {
+          "agg": "mha",
+          "mode": "frozen",
+          "epochs": 40,
+          "K": 3,
+          "set_w": 5,
+          "margin": 0.2,
+          "scale": 16.0,
+          "lr": 0.001,
+          "bs": 32,
+          "steps_per_epoch": 400,
+          "emb_dim": 128,
+          "encoder_frozen": true,
+          "encoder_ckpt": "reports/fingerprint_attention_ckpt.pt",
+          "feature": "cqt_mfcc",
+          "width": 0.25
+        }
+      },
+      "gru_finetune": {
+        "eer_mean": 0.1024,
+        "eer_std": 0.0167,
+        "eers": [
+          0.0918,
+          0.1306,
+          0.1,
+          0.1017,
+          0.088
+        ],
+        "top1_mean": 0.7286,
+        "top1_std": 0.0641,
+        "top1s": [
+          0.7676,
+          0.6255,
+          0.7453,
+          0.7142,
+          0.7904
+        ],
+        "n_ships": 22,
+        "n_probe": 7194,
+        "clip_disjoint": "PASS",
+        "session_disjoint_seed0": "FAIL_SESSION (overlap_ships=7, probe_frac=0.0581)",
+        "session_disjoint_seeds": [
+          "FAIL_SESSION",
+          "FAIL_SESSION",
+          "FAIL_SESSION",
+          "FAIL_SESSION",
+          "FAIL_SESSION"
+        ],
+        "mode": "finetune",
+        "agg": "gru",
+        "config": {
+          "agg": "gru",
+          "mode": "finetune",
+          "epochs": 30,
+          "K": 3,
+          "set_w": 5,
+          "margin": 0.2,
+          "scale": 16.0,
+          "lr": 0.0005,
+          "bs": 32,
+          "steps_per_epoch": 400,
+          "emb_dim": 128,
+          "encoder_frozen": false,
+          "encoder_ckpt": "reports/fingerprint_attention_ckpt.pt",
+          "feature": "cqt_mfcc",
+          "width": 0.25
+        }
+      },
+      "tcn_finetune": {
+        "eer_mean": 0.0894,
+        "eer_std": 0.0124,
+        "eers": [
+          0.1089,
+          0.0751,
+          0.0843,
+          0.0874,
+          0.0912
+        ],
+        "top1_mean": 0.7779,
+        "top1_std": 0.0486,
+        "top1s": [
+          0.7269,
+          0.8253,
+          0.7298,
+          0.8254,
+          0.782
+        ],
+        "n_ships": 22,
+        "n_probe": 7194,
+        "clip_disjoint": "PASS",
+        "session_disjoint_seed0": "FAIL_SESSION (overlap_ships=7, probe_frac=0.0581)",
+        "session_disjoint_seeds": [
+          "FAIL_SESSION",
+          "FAIL_SESSION",
+          "FAIL_SESSION",
+          "FAIL_SESSION",
+          "FAIL_SESSION"
+        ],
+        "mode": "finetune",
+        "agg": "tcn",
+        "config": {
+          "agg": "tcn",
+          "mode": "finetune",
+          "epochs": 30,
+          "K": 3,
+          "set_w": 5,
+          "margin": 0.2,
+          "scale": 16.0,
+          "lr": 0.0005,
+          "bs": 32,
+          "steps_per_epoch": 400,
+          "emb_dim": 128,
+          "encoder_frozen": false,
+          "encoder_ckpt": "reports/fingerprint_attention_ckpt.pt",
+          "feature": "cqt_mfcc",
+          "width": 0.25
+        }
+      },
+      "mha_finetune": {
+        "eer_mean": 0.0799,
+        "eer_std": 0.0063,
+        "eers": [
+          0.0886,
+          0.0783,
+          0.0723,
+          0.0836,
+          0.0765
+        ],
+        "top1_mean": 0.8179,
+        "top1_std": 0.0164,
+        "top1s": [
+          0.7965,
+          0.815,
+          0.8371,
+          0.8096,
+          0.8312
+        ],
+        "n_ships": 22,
+        "n_probe": 7194,
+        "clip_disjoint": "PASS",
+        "session_disjoint_seed0": "FAIL_SESSION (overlap_ships=7, probe_frac=0.0581)",
+        "session_disjoint_seeds": [
+          "FAIL_SESSION",
+          "FAIL_SESSION",
+          "FAIL_SESSION",
+          "FAIL_SESSION",
+          "FAIL_SESSION"
+        ],
+        "mode": "finetune",
+        "agg": "mha",
+        "config": {
+          "agg": "mha",
+          "mode": "finetune",
+          "epochs": 30,
+          "K": 3,
+          "set_w": 5,
+          "margin": 0.2,
+          "scale": 16.0,
+          "lr": 0.0005,
+          "bs": 32,
+          "steps_per_epoch": 400,
+          "emb_dim": 128,
+          "encoder_frozen": false,
+          "encoder_ckpt": "reports/fingerprint_attention_ckpt.pt",
+          "feature": "cqt_mfcc",
+          "width": 0.25
+        }
+      }
+    },
+    "best": {
+      "name": "mha_finetune",
+      "eer_mean": 0.0799,
+      "eer_std": 0.0063,
+      "top1_mean": 0.8179,
+      "vs_stats_pool_delta": 0.017
+    },
+    "gate_vs_stats_pool": {
+      "criterion": "mean EER <= ~0.05 with CI non-overlapping stats-pool 0.0629\u00b10.0043",
+      "met": false,
+      "verdict": "best mean EER=0.0799\u00b10.0063 [0.0736,0.0862] vs stats-pool 0.0629\u00b10.0043 [0.0586,0.0672]; mean<=0.05=False, CI_non_overlap=False",
+      "stats_pool_interval": [
+        0.0586,
+        0.0672
+      ],
+      "best_interval": [
+        0.0736,
+        0.0862
+      ]
+    },
+    "commands": [
+      ". .\\scripts\\use_tinyship.ps1",
+      "python scripts/reproduce/train_e1b_aggregators.py --agg all --mode frozen --no-score",
+      "python scripts/reproduce/train_e1b_aggregators.py --agg all --mode finetune --no-score",
+      "python scripts/reproduce/run_e1b_temporal.py",
+      "python tests/test_e1b_aggregators.py"
+    ],
+    "notes": "Learned temporal aggregators (GRU/TCN/MHA) over 1s clip embeddings; frozen = agg on attention embeddings; finetune = encoder+agg. Clip-disjoint asserted (abort on FAIL); session-disjoint soft."
+  },
+  "disjointness": "PASS",
+  "notes": "E1a skipped (N=2). E1c stats pool is the active baseline for E1b.",
+  "e3_oscr_report": "reports/e3_oscr.json"
+}

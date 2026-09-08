@@ -1,0 +1,44 @@
+# Dataset paths (relative to repo root)
+paths:
+  raw: data/raw
+  interim: data/interim
+  processed: data/processed
+  metadata: data/metadata
+
+datasets:
+  vtuad:
+    name: VTUAD
+    raw_dir: data/raw/vtuad
+    sample_rate_hz: 32000
+    clip_duration_s: 1.0
+    classes: [cargo, tanker, tug, passenger, background]
+  deepship:
+    name: DeepShip
+    raw_dir: data/raw/deepship
+    classes: [Cargo, Passenger, Tanker, Tug]
+  qiandaoear22:
+    name: QiandaoEar22
+    raw_dir: data/raw/qiandaoear22
+  shipsear:
+    name: ShipsEar
+    raw_dir: data/raw/shipsear
+
+# ShipNN-compatible feature defaults (configurable)
+features:
+  sample_rate: 32000
+  hop_length: 125
+  window: hann
+  fmin: 18.0
+  fmax: 4186.0
+  n_bins: 95
+  n_mfcc: 13
+  n_mels: 95
+  n_fft: 2048
+
+standardize:
+  target_sample_rate: 32000
+  mono: true
+  dtype: float32
+  format: wav
+  # Catalogue first; set true only after metadata inspection
+  resample: false

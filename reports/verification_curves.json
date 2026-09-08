@@ -1,0 +1,38 @@
+{
+  "protocol": "k=20, w=3, seed=0, certified set",
+  "methods": {
+    "Sub-center + mean": {
+      "eer": 0.0713,
+      "thr_eer": 0.2953,
+      "n_genuine": 7194,
+      "n_impostor": 151074,
+      "frr_at_far": {
+        "0.01": 0.2645,
+        "0.05": 0.0965,
+        "0.1": 0.0509
+      }
+    },
+    "Sub-center + stats-pool (ours)": {
+      "eer": 0.0626,
+      "thr_eer": 0.6707,
+      "n_genuine": 7194,
+      "n_impostor": 151074,
+      "frr_at_far": {
+        "0.01": 0.2395,
+        "0.05": 0.0781,
+        "0.1": 0.035
+      }
+    },
+    "ECAPA-TDNN stats-pool": {
+      "eer": 0.1135,
+      "thr_eer": 0.679,
+      "n_genuine": 7194,
+      "n_impostor": 151074,
+      "frr_at_far": {
+        "0.01": 0.5033,
+        "0.05": 0.2291,
+        "0.1": 0.1298
+      }
+    }
+  }
+}

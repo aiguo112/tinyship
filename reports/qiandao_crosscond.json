@@ -1,0 +1,8 @@
+{
+  "status": "skipped_c1",
+  "reason": "C0 gate NOT_VIABLE",
+  "gate_union_n": 1,
+  "gate_union": ["No7"],
+  "verdict": "NOT_VIABLE",
+  "note": "Per PAPER_IMPROVEMENT_PLAN: do not train when <~4 vessels qualify. Limitation prose added to paper instead of a forced EER table."
+}

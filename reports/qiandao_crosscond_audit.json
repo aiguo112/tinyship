@@ -1,0 +1,114 @@
+{
+  "n_individual_names": 4,
+  "individuals": [
+    "Car",
+    "CivilianBoats",
+    "No5",
+    "No7"
+  ],
+  "excluded_present": [
+    "FishBoat",
+    "KaiYuan",
+    "SpeedBoat",
+    "Unknown"
+  ],
+  "gate_distance_vessels": [
+    "No7"
+  ],
+  "gate_audibility_vessels": [
+    "No7"
+  ],
+  "gate_union_n": 1,
+  "gate_union": [
+    "No7"
+  ],
+  "verdict": "NOT_VIABLE",
+  "per_vessel": {
+    "Car": {
+      "n_clips": 100,
+      "dist_counts": {
+        "F": 100
+      },
+      "aud_counts": {
+        "W": 100
+      },
+      "dist_qualifying_pairs": [],
+      "aud_qualifying_pairs": []
+    },
+    "CivilianBoats": {
+      "n_clips": 51,
+      "dist_counts": {
+        "M": 51
+      },
+      "aud_counts": {
+        "M": 51
+      },
+      "dist_qualifying_pairs": [],
+      "aud_qualifying_pairs": []
+    },
+    "No5": {
+      "n_clips": 29,
+      "dist_counts": {
+        "M": 29
+      },
+      "aud_counts": {
+        "M": 29
+      },
+      "dist_qualifying_pairs": [],
+      "aud_qualifying_pairs": []
+    },
+    "No7": {
+      "n_clips": 478,
+      "dist_counts": {
+        "M": 262,
+        "F": 142,
+        "N": 74
+      },
+      "aud_counts": {
+        "M": 252,
+        "W": 152,
+        "S": 74
+      },
+      "dist_qualifying_pairs": [
+        {
+          "enroll": "M",
+          "probe": "F",
+          "n_enroll": 262,
+          "n_probe": 142
+        },
+        {
+          "enroll": "M",
+          "probe": "N",
+          "n_enroll": 262,
+          "n_probe": 74
+        },
+        {
+          "enroll": "F",
+          "probe": "N",
+          "n_enroll": 142,
+          "n_probe": 74
+        }
+      ],
+      "aud_qualifying_pairs": [
+        {
+          "enroll": "M",
+          "probe": "W",
+          "n_enroll": 252,
+          "n_probe": 152
+        },
+        {
+          "enroll": "M",
+          "probe": "S",
+          "n_enroll": 252,
+          "n_probe": 74
+        },
+        {
+          "enroll": "W",
+          "probe": "S",
+          "n_enroll": 152,
+          "n_probe": 74
+        }
+      ]
+    }
+  }
+}

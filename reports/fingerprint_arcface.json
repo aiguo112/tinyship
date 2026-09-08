@@ -1,0 +1,82 @@
+{
+  "clip_split": {
+    "protocol": "clip_split",
+    "usable_ships": 22,
+    "n_probe": 11026,
+    "n_gallery": 11014,
+    "eer": 0.3727,
+    "top1": 0.9397,
+    "top5": 0.981,
+    "ccr@fpr0.1": 0.6428,
+    "oscr_auc": 0.827
+  },
+  "enroll_k": {
+    "protocol": "enroll_k",
+    "usable_ships": 22,
+    "n_probe": 21930,
+    "n_gallery": 110,
+    "eer": 0.3546,
+    "top1": 0.3763,
+    "top5": 0.6235,
+    "ccr@fpr0.1": 0.1395,
+    "oscr_auc": 0.2686
+  },
+  "across_date": {
+    "protocol": "across_date",
+    "usable_ships": 3,
+    "n_probe": 9007,
+    "n_gallery": 9001,
+    "eer": 0.3708,
+    "top1": 0.8866,
+    "top5": 0.9584,
+    "ccr@fpr0.1": 0.3861,
+    "oscr_auc": 0.6706
+  },
+  "within_session": {
+    "protocol": "clip_split",
+    "usable_ships": 22,
+    "n_probe": 11026,
+    "n_gallery": 11014,
+    "eer": 0.3727,
+    "top1": 0.9397,
+    "top5": 0.981,
+    "ccr@fpr0.1": 0.6428,
+    "oscr_auc": 0.827
+  },
+  "across_session": {
+    "protocol": "across_date",
+    "usable_ships": 3,
+    "n_probe": 9007,
+    "n_gallery": 9001,
+    "eer": 0.3708,
+    "top1": 0.8866,
+    "top5": 0.9584,
+    "ccr@fpr0.1": 0.3861,
+    "oscr_auc": 0.6706
+  },
+  "across_session_date_disjoint": {
+    "protocol": "across_date",
+    "usable_ships": 3,
+    "n_probe": 9007,
+    "n_gallery": 9001,
+    "eer": 0.3708,
+    "top1": 0.8866,
+    "top5": 0.9584,
+    "ccr@fpr0.1": 0.3861,
+    "oscr_auc": 0.6706
+  },
+  "note": "sub_init-based across_session removed: VTUAD sub_init is often 1 clip. Primary metrics: clip_split / enroll_k (+ OSCR). Honest condition shift: across_date (tiny N).",
+  "eer_gap_across_date_minus_clip": -0.0019,
+  "eer_gap_across_minus_within": -0.0019,
+  "_config": {
+    "loss": "arcface",
+    "epochs": 120,
+    "emb_dim": 128,
+    "width": 0.25,
+    "feature": "cqt_mfcc",
+    "margin": 0.2,
+    "scale": 16.0,
+    "lr": 0.001,
+    "enroll_k": 5
+  }
+}

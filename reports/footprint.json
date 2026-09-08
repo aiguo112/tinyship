@@ -1,0 +1,100 @@
+{
+  "experiment": "footprint",
+  "energy_j": null,
+  "energy_note": "not measured (no power meter)",
+  "models": {
+    "mobilenet": {
+      "name": "MobileNetV3-Small 0.25 (TinyShip encoder)",
+      "build": "build_encoder(2,128,0.25)",
+      "weight_source": "fingerprint_attention_ckpt.pt encoder",
+      "input": {
+        "source": "data/processed/feat_cache/cqt_mfcc_000003f20f5bb5b8.npy",
+        "shape": [
+          1,
+          2,
+          95,
+          257
+        ]
+      },
+      "params_trainable": 98640,
+      "checkpoint_bytes_fp32": 487259,
+      "checkpoint_mb_fp32": 0.4647,
+      "checkpoint_note": "checkpoint bytes (fp32 weights), not MCU flash after quantization",
+      "emb_dim": 128,
+      "energy_j": null,
+      "energy_note": "not measured (no power meter)",
+      "latency_cuda": {
+        "ms_mean": 9.0027,
+        "ms_std": 1.5979,
+        "n_warmup": 20,
+        "n_timed": 100,
+        "peak_ram_mb": 10.16
+      },
+      "peak_ram_cuda_mb": 10.16,
+      "cuda_device": "NVIDIA GeForce RTX 5070 Ti",
+      "latency_cpu": {
+        "ms_mean": 7.0139,
+        "ms_std": 0.8268,
+        "n_warmup": 20,
+        "n_timed": 100,
+        "peak_ram_mb": null
+      },
+      "peak_ram_cpu": {
+        "measured": true,
+        "rss_delta_mb": 0.0,
+        "rss_after_mb": 1107.066,
+        "note": "process RSS delta around CPU forwards (coarse; not peak allocator)"
+      }
+    },
+    "ecapa": {
+      "name": "SpeechBrain ECAPA_TDNN",
+      "build": "ECAPA_TDNN(input_size=80, lin_neurons=192)",
+      "weight_source": "e2_ecapa_ckpt.pt encoder",
+      "input": {
+        "source": "synthetic_fbank_shape",
+        "shape": [
+          1,
+          101,
+          80
+        ]
+      },
+      "params_trainable": 6194048,
+      "checkpoint_bytes_fp32": 24939889,
+      "checkpoint_mb_fp32": 23.7845,
+      "checkpoint_bytes_from_ckpt_encoder": 24939889,
+      "checkpoint_note": "checkpoint bytes (fp32 weights), not MCU flash after quantization",
+      "emb_dim": 192,
+      "frontend_note": "Native 16 kHz log-mel fbank (not CQT+MFCC)",
+      "energy_j": null,
+      "energy_note": "not measured (no power meter)",
+      "latency_cuda": {
+        "ms_mean": 14.218,
+        "ms_std": 1.9672,
+        "n_warmup": 20,
+        "n_timed": 100,
+        "peak_ram_mb": 42.058
+      },
+      "peak_ram_cuda_mb": 42.058,
+      "cuda_device": "NVIDIA GeForce RTX 5070 Ti",
+      "latency_cpu": {
+        "ms_mean": 22.2878,
+        "ms_std": 1.2477,
+        "n_warmup": 20,
+        "n_timed": 100,
+        "peak_ram_mb": null
+      },
+      "peak_ram_cpu": {
+        "measured": true,
+        "rss_delta_mb": 0.062,
+        "rss_after_mb": 1667.516,
+        "note": "process RSS delta around CPU forwards (coarse; not peak allocator)"
+      }
+    }
+  },
+  "honesty": [
+    "Disk/flash proxy = serialized fp32 state_dict bytes, not post-quant MCU flash.",
+    "Latency = batch=1 forward only (no feature extract / dataloader).",
+    "CUDA peak RAM = torch.cuda.max_memory_allocated during timed forwards.",
+    "Energy not measured."
+  ]
+}

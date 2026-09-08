@@ -1,0 +1,199 @@
+{
+  "protocol_check": [
+    {
+      "method": "Closed-set (ShipNN-style softmax)",
+      "k_enroll": null,
+      "probe_w": null,
+      "seed": null,
+      "n_probe_sets": null,
+      "disjoint": "N/A",
+      "eer": null,
+      "top1": null,
+      "note": "undefined on unseen"
+    },
+    {
+      "method": "ArcFace + clip cosine",
+      "k_enroll": "N/A",
+      "probe_w": "N/A",
+      "seed": 0,
+      "n_probe_sets": 11026,
+      "disjoint": "PASS",
+      "eer": 0.3727,
+      "top1": 0.9383,
+      "note": "clip-level backend",
+      "protocol": "clip_cosine"
+    },
+    {
+      "method": "ArcFace + prototype enroll (single-clip probe)",
+      "k_enroll": 20,
+      "probe_w": 1,
+      "seed": 0,
+      "n_probe_sets": 21600,
+      "disjoint": "PASS",
+      "eer": 0.1937,
+      "top1": 0.4999,
+      "note": "probe_w=1 by design \u2014 NOT the set protocol",
+      "protocol": "prototype_single_probe"
+    },
+    {
+      "method": "ArcFace + AS-norm",
+      "k_enroll": 20,
+      "probe_w": 3,
+      "seed": 0,
+      "n_probe_sets": 7194,
+      "disjoint": "PASS",
+      "eer": 0.0805,
+      "top1": 0.7478,
+      "note": "",
+      "protocol": "certified_mean_asnorm"
+    },
+    {
+      "method": "ArcFace + temporal mean",
+      "k_enroll": 20,
+      "probe_w": 3,
+      "seed": 0,
+      "n_probe_sets": 7194,
+      "disjoint": "PASS",
+      "eer": 0.096,
+      "top1": 0.7478,
+      "note": "",
+      "protocol": "certified_mean"
+    },
+    {
+      "method": "Sub-center + attention",
+      "k_enroll": 20,
+      "probe_w": 3,
+      "seed": 0,
+      "n_probe_sets": 7194,
+      "disjoint": "PASS",
+      "eer": 0.0765,
+      "top1": 0.8228,
+      "note": "",
+      "protocol": "attention_set_disjoint"
+    },
+    {
+      "method": "Triplet + temporal mean",
+      "k_enroll": 20,
+      "probe_w": 3,
+      "seed": 0,
+      "n_probe_sets": 7194,
+      "disjoint": "PASS",
+      "eer": 0.4963,
+      "top1": 0.0881,
+      "note": "",
+      "protocol": "certified_mean"
+    },
+    {
+      "method": "Sub-center + mean (ours)",
+      "k_enroll": 20,
+      "probe_w": 3,
+      "seed": 0,
+      "n_probe_sets": 7194,
+      "disjoint": "PASS",
+      "eer": 0.0714,
+      "top1": 0.8325,
+      "note": "",
+      "protocol": "certified_mean"
+    }
+  ],
+  "set_protocol_n_probe_ref": 7194,
+  "asnorm_explanation": "verify_backend used k_enroll=5 + single-clip probes (EER~0.24); Table I uses k_enroll=20 + probe_w=3 mean-pooled probes (EER~0.081). Same AS-norm formula; different enrollment/probe aggregation.",
+  "seed_variance": {
+    "ours_mean": {
+      "eers": [
+        0.0714,
+        0.0686,
+        0.0699,
+        0.0775,
+        0.0617
+      ],
+      "mean": 0.0698,
+      "std": 0.0057,
+      "min": 0.0617,
+      "max": 0.0775
+    },
+    "attention": {
+      "eers": [
+        0.0765,
+        0.072,
+        0.0739,
+        0.0805,
+        0.0678
+      ],
+      "mean": 0.0741,
+      "std": 0.0048,
+      "min": 0.0678,
+      "max": 0.0805
+    },
+    "asnorm": {
+      "eers": [
+        0.0805,
+        0.0808,
+        0.0877,
+        0.0847,
+        0.0693
+      ],
+      "mean": 0.0806,
+      "std": 0.007,
+      "min": 0.0693,
+      "max": 0.0877
+    }
+  },
+  "per_seed": [
+    {
+      "seed": 0,
+      "ours_mean": 0.0714,
+      "attention": 0.0765,
+      "asnorm": 0.0805,
+      "n_probe_ours": 7194,
+      "disjoint_ours": true
+    },
+    {
+      "seed": 1,
+      "ours_mean": 0.0686,
+      "attention": 0.072,
+      "asnorm": 0.0808,
+      "n_probe_ours": 7194,
+      "disjoint_ours": true
+    },
+    {
+      "seed": 2,
+      "ours_mean": 0.0699,
+      "attention": 0.0739,
+      "asnorm": 0.0877,
+      "n_probe_ours": 7194,
+      "disjoint_ours": true
+    },
+    {
+      "seed": 3,
+      "ours_mean": 0.0775,
+      "attention": 0.0805,
+      "asnorm": 0.0847,
+      "n_probe_ours": 7194,
+      "disjoint_ours": true
+    },
+    {
+      "seed": 4,
+      "ours_mean": 0.0617,
+      "attention": 0.0678,
+      "asnorm": 0.0693,
+      "n_probe_ours": 7194,
+      "disjoint_ours": true
+    }
+  ],
+  "verdict": "TOP METHODS TIED",
+  "intervals": {
+    "ours": [
+      0.0641,
+      0.0755
+    ],
+    "attention": [
+      0.0693,
+      0.0789
+    ],
+    "asnorm": [
+      0.0736,
+      0.08760000000000001
+    ]
+  }
+}

@@ -82,3 +82,6 @@ Thumbs.db
 *.key
 ONC_TOKEN
 
+# Generated demo payload (audio is already inlined in tsmr_demo.html)
+tsmr_demo_samples.json
+

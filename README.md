@@ -22,6 +22,18 @@ Audio **datasets are not included** in this repository (license / size). See [Da
 
 ---
 
+## Interactive demo
+
+Open-set vessel identification as a sonar operator station: real VTUAD 1 s hydrophone clips, range-banded contacts, CQT signatures, and a t-SNE of unseen MMSIs.
+
+![TinyShip demo](docs/figures/fig_demo.png)
+
+**[Open `tsmr_demo.html`](tsmr_demo.html)** in any browser (no build step). Click **▶ LISTEN** to hear a clip, **[ RUN CLASSIFIER ]** to step to the next real sample, or **?** for the in-app guide.
+
+The page is self-contained (15 one-second illustration clips are embedded). It does **not** replace the IEEE DataPort release of VTUAD.
+
+---
+
 ## Results
 
 ### Method comparison (22 unseen vessels)
@@ -198,6 +210,7 @@ tests/               protocol and pooling checks
 configs/             dataset / split / training yaml
 reports/             small JSON/MD results (no weights)
 docs/figures/        paper figures for this README
+tsmr_demo.html       self-contained browser demo (screenshot: docs/figures/fig_demo.png)
 notebooks/           dataset / split exploration
 ```
 
